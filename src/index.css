@@ -1,0 +1,119 @@
+@import './fontes.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================================
+   DESIGN SYSTEM — Ludiane Figueiredo (tema claro, "Marca")
+
+   Nasce do cartão de visita e da identidade enviada: papel creme, carvão, e o
+   dourado do foil. Contraste medido (WCAG, sobre o creme #F3EEE2):
+
+     tinta     #33352F  10,7:1   texto
+     suave     #6B6657   4,95:1   texto secundário (passa AA)
+     ouro-tinta #7C5F28  ≥ 5:1    texto/ícone dourado
+     ouro      #B99A62   2,3:1    ⚠️ SÓ decorativo (estrela, fios, ornamento) —
+                                  nunca carrega texto sobre o creme. Sobre o
+                                  carvão dá 4,65:1 e pode escrever.
+
+   ⚠️ O dourado de texto é o `ouro-tinta`, não o `ouro`. Mesma disciplina do
+   site da VirtueTech: a cor bonita é de superfície, a cor que passa no
+   contraste é a que escreve.
+   ============================================================================ */
+
+@layer base {
+  :root {
+    --papel: 42 41% 92%;          /* #F3EEE2 */
+    --superficie: 42 56% 96%;     /* #FBF8F1 */
+    --tinta: 80 6% 20%;           /* #33352F */
+    --tinta-2: 71 7% 29%;         /* #4E5045 */
+    --suave: 45 10% 38%;          /* #6B6657 */
+    --ouro: 39 38% 55%;           /* #B99A62 */
+    --ouro-tinta: 39 50% 32%;     /* #7C5F28 */
+    --fio: 42 38% 85%;            /* #E7DEC9 */
+    --fio-2: 42 36% 76%;          /* #D8CBAD */
+
+    /* tokens do shadcn, apontando para a paleta acima */
+    --background: var(--papel);
+    --foreground: var(--tinta);
+    --primary: var(--tinta);
+    --primary-foreground: var(--papel);
+    --secondary: var(--superficie);
+    --secondary-foreground: var(--tinta);
+    --muted: var(--superficie);
+    --muted-foreground: var(--suave);
+    --accent: var(--superficie);
+    --accent-foreground: var(--tinta);
+    --destructive: 0 62% 40%;
+    --destructive-foreground: var(--papel);
+    --border: var(--fio);
+    --input: var(--fio-2);
+    --ring: var(--ouro-tinta);
+    --radius: 0.25rem;
+  }
+
+  * { @apply border-border; }
+
+  html { -webkit-text-size-adjust: 100%; }
+  /* ⚠️ sem `scroll-behavior: smooth` de propósito: a âncora salta, e quem pede
+     menos movimento não é surpreendido. */
+
+  body {
+    @apply bg-papel text-tinta font-corpo antialiased;
+    font-size: 1rem;
+    line-height: 1.7;
+    background-image: linear-gradient(160deg, #f8f3e8 0%, #f3eee2 45%, #ede7d8 100%);
+    background-attachment: fixed;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3 { @apply font-titulo text-tinta; font-weight: 400; letter-spacing: 0.005em; }
+
+  /* números alinhados (o cartão também usa algarismos de mesma altura) */
+  body { font-variant-numeric: lining-nums; }
+  .titulo-num { font-variant-numeric: lining-nums; }
+
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid hsl(var(--ouro-tinta)); outline-offset: 3px; border-radius: 2px; }
+
+  section[id] { scroll-margin-top: 4.5rem; }
+}
+
+@layer components {
+  .rotulo {
+    @apply inline-flex items-center gap-3 font-corpo text-[0.68rem] uppercase text-ouro-tinta;
+    letter-spacing: 0.3em;
+  }
+  .rotulo::before { content: ""; width: 26px; height: 1px; background: hsl(var(--ouro)); }
+  .estrela {
+    display: block; width: 20px; height: 20px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.5l1.7 8.8L22.5 12l-8.8 1.7L12 22.5l-1.7-8.8L1.5 12l8.8-1.7z' fill='%23B99A62'/%3E%3C/svg%3E") center/contain no-repeat;
+  }
+  .titulo-secao { font-size: clamp(1.85rem, 3.2vw, 2.7rem); line-height: 1.14; }
+  .lead { @apply text-suave; font-size: clamp(1rem, 1.15vw, 1.1rem); line-height: 1.75; }
+}
+
+/* A foto do ensaio tem fundo creme claro: `multiply` o dissolve no papel, a máscara
+   esmaece a borda esquerda e o pé, e o brilho atrás dá volume — o mesmo encaixe da prévia
+   aprovada (a foto preenche a coluna e encosta no fim do topo). */
+.foto-fundida {
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 26%, #000 90%, transparent 100%),
+    linear-gradient(to bottom, #000 78%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 26%, #000 90%, transparent 100%),
+    linear-gradient(to bottom, #000 78%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+.brilho-foto {
+  position: absolute;
+  inset: -8% -12% -8% -12%;
+  pointer-events: none;
+  background:
+    radial-gradient(58% 52% at 66% 42%, rgba(216, 203, 173, 0.7) 0%, rgba(216, 203, 173, 0) 72%),
+    radial-gradient(48% 48% at 32% 74%, rgba(185, 154, 98, 0.18) 0%, rgba(185, 154, 98, 0) 72%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

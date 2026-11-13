@@ -1,0 +1,116 @@
+/* ===========================================================================
+   O conteúdo do site — fonte única. Trocar texto, contato ou CRP é aqui.
+
+   ⚠️ Os dados de contato e o CRP foram conferidos com a psicóloga em 12/11/2026
+   (mesmos do cartão de visita). Se mudar um, mude aqui: a página, o rodapé, o
+   JSON-LD do index.html e o <noscript> usam estes valores — e os dois últimos
+   moram em HTML puro, então precisam ser alterados à mão no `index.html`.
+
+   ⚠️ Texto de divulgação de psicólogo é regulado (Código de Ética, Res. CFP
+   3/2007, arts. 53 a 58). O que NÃO entra, e por quê:
+     · depoimento, antes e depois, número de pacientes   → vedado
+     · promessa de resultado, "garantia", "cura"          → vedado
+     · preço, desconto, "primeira sessão grátis"          → vedado em divulgação
+     · "especialista em Psicologia Clínica"               → sugere título que
+                                                            o Conselho confere
+     · menção à plataforma de relatórios                  → só depois da consulta
+                                                            ao CRP-RJ
+   Toda peça leva nome completo, "psicóloga" e o CRP.
+   =========================================================================== */
+
+export const PROFISSIONAL = {
+  nome: "Ludiane Figueiredo",
+  profissao: "Psicóloga",
+  crp: "CRP 05/56264",
+} as const;
+
+export const CONTATO = {
+  whatsappRotulo: "(22) 98829-4387",
+  whatsappLink:
+    "https://wa.me/5522988294387?text=" +
+    encodeURIComponent("Olá, Ludiane! Vim pelo site e gostaria de conversar sobre o atendimento."),
+  telefoneLink: "tel:+5522988294387",
+  instagramRotulo: "@ludianebfigueiredo",
+  instagramLink: "https://www.instagram.com/ludianebfigueiredo/",
+  email: "contato@ludianefigueiredo.com.br",
+  emailLink: "mailto:contato@ludianefigueiredo.com.br",
+  site: "ludianefigueiredo.com.br",
+  localidade: "Araruama, RJ",
+} as const;
+
+export const NAVEGACAO = [
+  { rotulo: "Início", href: "#inicio" },
+  { rotulo: "Como posso ajudar", href: "#ajuda" },
+  { rotulo: "Acompanhamento", href: "#acompanhamento" },
+  { rotulo: "Sobre mim", href: "#sobre" },
+  { rotulo: "Dúvidas", href: "#duvidas" },
+  { rotulo: "Contato", href: "#contato" },
+] as const;
+
+export const TEMAS = [
+  {
+    icone: "ansiedade",
+    titulo: "Ansiedade",
+    texto: "Preocupação constante, medo e tensão que atrapalham o dia a dia, a escola e o sono.",
+  },
+  {
+    icone: "humor",
+    titulo: "Humor e desânimo",
+    texto: "Tristeza, irritação e falta de energia ou de interesse pelo que antes fazia sentido.",
+  },
+  {
+    icone: "autoestima",
+    titulo: "Autoestima",
+    texto: "Autocrítica dura, insegurança com a própria imagem e dificuldade de se reconhecer.",
+  },
+  {
+    icone: "relacoes",
+    titulo: "Relações e escola",
+    texto: "Conflitos com família e amigos, pressão escolar e as mudanças próprias da idade.",
+  },
+] as const;
+
+export const ETAPAS = [
+  {
+    n: "01",
+    titulo: "Primeira conversa",
+    texto: "Conhecemos a história, a queixa e as expectativas, com a participação dos responsáveis.",
+  },
+  {
+    n: "02",
+    titulo: "Escuta e cuidado",
+    texto: "Sessões online com escuta atenta, no ritmo de cada jovem, em um ambiente seguro e sigiloso.",
+  },
+  {
+    n: "03",
+    titulo: "Acompanhamento",
+    texto:
+      "O processo é revisto ao longo do tempo. Aos responsáveis compartilho o essencial, respeitando o sigilo profissional.",
+  },
+] as const;
+
+export const DADOS_SOBRE = [
+  { rotulo: "Registro", valor: PROFISSIONAL.crp },
+  { rotulo: "Público", valor: "Pré-adolescentes e adolescentes" },
+  { rotulo: "Atendimento", valor: "Online" },
+  { rotulo: "Localidade", valor: CONTATO.localidade },
+] as const;
+
+export const DUVIDAS = [
+  {
+    p: "Como funciona o atendimento online?",
+    r: "As sessões acontecem por videochamada, em horário combinado. Basta um lugar tranquilo e privado e uma boa conexão com a internet.",
+  },
+  {
+    p: "Qual a faixa etária atendida?",
+    r: "Atendo pré-adolescentes e adolescentes. Se tiver dúvida sobre a idade, é só me escrever pelo WhatsApp.",
+  },
+  {
+    p: "Os pais ou responsáveis participam?",
+    r: "Participam da primeira conversa e autorizam o atendimento por escrito, como pede a ética profissional. O que acontece nas sessões é sigiloso: aos responsáveis compartilho apenas o essencial para o cuidado.",
+  },
+  {
+    p: "Como agendo uma conversa?",
+    r: "Pelo WhatsApp. Os horários disponíveis e os valores são informados diretamente, antes de começarmos.",
+  },
+] as const;

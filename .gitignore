@@ -1,0 +1,33 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Insumo dos scripts de imagem: a foto de origem e os intermediarios do recorte.
+# O que o site usa e a nuvem de pontos gerada (src/data/), nao a foto -- e o
+# script rebaixa a foto sozinho quando ela falta.
+scripts/fonte/
+
+# Cache de build/Python, nunca versionado.
+__pycache__/
+*.tsbuildinfo
