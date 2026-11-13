@@ -88,4 +88,4 @@ Segundo o NIMH (Estados Unidos), vale buscar ajuda quando as emoções ou o comp
 - Se tiver dúvida por onde começar, o pediatra pode orientar e encaminhar.
 - Anote suas perguntas antes da primeira conversa com o profissional.
 
-Atendo online pré-adolescentes e adolescentes e suas famílias, em Araruama, RJ.
+Atendo pré-adolescentes e adolescentes e suas famílias, presencialmente no Centro de Araruama (Edifício Delfim Carvalho, Avenida Brasil, 10, sala 514, de terça a quinta, das 13h às 17h) e online.

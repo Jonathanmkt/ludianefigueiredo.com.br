@@ -66,7 +66,7 @@ const PaginaTexto = ({ pagina }: { pagina: Pagina }) => {
           <h1 className="text-balance text-[clamp(1.9rem,4vw,2.8rem)] font-light leading-[1.15]">{pagina.h1}</h1>
 
           <p className="mt-5 border-y border-fio py-3 text-[0.85rem] text-suave">
-            Por {PROFISSIONAL.nome}, psicóloga online · {CONTATO.localidade} · {PROFISSIONAL.crp} · atualizado em{" "}
+            Por {PROFISSIONAL.nome}, psicóloga · {CONTATO.localidade} · {PROFISSIONAL.crp} · atualizado em{" "}
             <time dateTime={pagina.atualizadaEm}>{dataBR(pagina.atualizadaEm)}</time>
             {dados && <> · {dados.minutos} min de leitura</>}
           </p>

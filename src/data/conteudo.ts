@@ -33,6 +33,8 @@ export const CONTATO = {
   emailLink: "mailto:contato@ludianefigueiredo.com.br",
   site: "ludianefigueiredo.com.br",
   localidade: "Araruama, RJ",
+  endereco: "Edifício Delfim Carvalho, Avenida Brasil, 10, sala 514, Centro, Araruama, RJ",
+  horarioPresencial: "Terça a quinta, das 13h às 17h",
 } as const;
 
 /** O número de WhatsApp, só os dígitos, no formato do `wa.me`. */
@@ -92,7 +94,7 @@ export const ETAPAS = [
   {
     n: "02",
     titulo: "Escuta e cuidado",
-    texto: "Sessões online com escuta atenta, no ritmo de cada jovem, em um ambiente seguro e sigiloso.",
+    texto: "Sessões presenciais ou online, com escuta atenta, no ritmo de cada jovem, em um ambiente seguro e sigiloso.",
   },
   {
     n: "03",
@@ -104,12 +106,18 @@ export const ETAPAS = [
 
 export const DADOS_SOBRE = [
   { rotulo: "Registro", valor: PROFISSIONAL.crp },
+  { rotulo: "Formação", valor: "Pós-graduação em Psicologia Baseada em Evidências" },
   { rotulo: "Público", valor: "Pré-adolescentes e adolescentes" },
-  { rotulo: "Atendimento", valor: "Online" },
-  { rotulo: "Localidade", valor: CONTATO.localidade },
+  { rotulo: "Atendimento", valor: "Presencial e online" },
+  { rotulo: "Endereço", valor: CONTATO.endereco },
+  { rotulo: "Horário presencial", valor: CONTATO.horarioPresencial },
 ] as const;
 
 export const DUVIDAS = [
+  {
+    p: "Onde é o atendimento presencial?",
+    r: `No Centro de Araruama, no Edifício Delfim Carvalho (Avenida Brasil, 10, sala 514). ${CONTATO.horarioPresencial}. Para marcar, é só falar pelo WhatsApp.`,
+  },
   {
     p: "Como funciona o atendimento online?",
     r: "As sessões acontecem por videochamada, em horário combinado. Basta um lugar tranquilo e privado e uma boa conexão com a internet.",

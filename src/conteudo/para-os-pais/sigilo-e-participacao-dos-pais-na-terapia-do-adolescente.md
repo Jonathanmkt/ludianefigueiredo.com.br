@@ -20,10 +20,6 @@ fontes:
     url: https://www.in.gov.br/en/web/dou/-/resolucao-n-6-de-29-de-marco-de-2019-69440920
     ano: 2019
   - instituicao: "CFP"
-    titulo: "Resolução CFP nº 1/2009 (registro documental e prontuário)"
-    url: https://site.cfp.org.br/wp-content/uploads/2009/04/resolucao2009_01.pdf
-    ano: 2009
-  - instituicao: "CFP"
     titulo: "Resolução CFP nº 9/2024 (serviços psicológicos por tecnologias), art. 7º, parágrafo único"
     url: https://www.in.gov.br/en/web/dou/-/resolucao-n-9-de-18-de-julho-de-2024-575046772
     ano: 2024
@@ -50,8 +46,6 @@ A psicóloga mantém a família informada sobre o que é necessário para o cuid
 Quanto ao que exatamente é compartilhado em cada situação, não há uma lista fixa. É uma decisão da psicóloga, guiada pelo Código de Ética (art. 13), que ela explica à família e ao adolescente no início e que fica combinada no contrato do atendimento.
 
 Se a família precisar de um documento escrito, como uma declaração de que o adolescente está em acompanhamento ou um relatório, pode pedi-lo à psicóloga. O documento é feito a pedido, entregue numa conversa de devolução, e não reproduz o que foi dito nas sessões (Resolução CFP 6/2019, arts. 4º, 6º e 16).
-
-A psicóloga mantém um prontuário do atendimento, que é sigiloso (Resolução CFP 1/2009). Como representantes legais do adolescente, os responsáveis têm direito de acesso ao prontuário, na forma prevista pelo Conselho, e a psicóloga explica isso no início.
 
 ## Por que o sigilo importa tanto para o adolescente?
 

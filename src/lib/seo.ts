@@ -18,8 +18,8 @@ const LOGO = `${SITE}/marca-ludiane.png`;
 const NOME_SERVICO = `${PROFISSIONAL.nome} · ${PROFISSIONAL.profissao}`;
 const CRP_NUMERO = PROFISSIONAL.crp.replace("CRP ", "");
 
-export const HOME_TITULO = `${PROFISSIONAL.nome} · Psicóloga online para adolescentes · ${CONTATO.localidade} · ${PROFISSIONAL.crp}`;
-export const HOME_DESCRICAO = `Psicóloga online para pré-adolescentes e adolescentes, em ${CONTATO.localidade}. O contato inicial é pelo WhatsApp. ${PROFISSIONAL.crp}.`;
+export const HOME_TITULO = `${PROFISSIONAL.nome} · Psicóloga para adolescentes · ${CONTATO.localidade} · ${PROFISSIONAL.crp}`;
+export const HOME_DESCRICAO = `Psicóloga para pré-adolescentes e adolescentes em ${CONTATO.localidade}: atendimento presencial no Centro e online. Contato inicial pelo WhatsApp. ${PROFISSIONAL.crp}.`;
 
 /** Uma rota a pré-renderizar. `caminho` é o que o navegador pede; o arquivo sai de `arquivo`. */
 export type Rota = {
@@ -114,11 +114,24 @@ const grafo = (rota: Rota) => {
       logo: LOGO,
       image: IMAGEM_OG,
       description: HOME_DESCRICAO,
-      serviceType: "Psicoterapia online para pré-adolescentes e adolescentes",
+      serviceType: "Psicoterapia para pré-adolescentes e adolescentes, presencial e online",
       telephone: "+55 22 98829-4387",
       email: CONTATO.email,
-      // ⚠️ Só a cidade. Rua, CEP e endereço residencial não entram em lugar nenhum.
-      address: { "@type": "PostalAddress", addressLocality: "Araruama", addressRegion: "RJ", addressCountry: "BR" },
+      // O endereço é o da sala de atendimento (Edifício Delfim Carvalho), divulgado por decisão do CEO em 13/11/2026.
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Avenida Brasil, 10, sala 514 (Edifício Delfim Carvalho)",
+        addressLocality: "Araruama",
+        addressRegion: "RJ",
+        postalCode: "28970-000",
+        addressCountry: "BR",
+      },
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Tuesday", "Wednesday", "Thursday"],
+        opens: "13:00",
+        closes: "17:00",
+      },
       areaServed: { "@type": "City", name: "Araruama" },
       availableLanguage: "pt-BR",
       sameAs: [CONTATO.instagramLink],

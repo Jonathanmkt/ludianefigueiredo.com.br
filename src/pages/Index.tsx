@@ -35,7 +35,7 @@ const Index = () => {
             <Revela>
               <span className="estrela mb-6" aria-hidden="true" />
               <h1 className="max-w-[24ch] text-balance text-[clamp(2.05rem,4vw,3.1rem)] font-light leading-[1.14]">
-                Psicóloga online para <span className="font-manuscrita text-[1.18em] font-normal text-ouro-tinta">adolescentes</span> e pré-adolescentes
+                Psicóloga em Araruama para <span className="font-manuscrita text-[1.18em] font-normal text-ouro-tinta">adolescentes</span> e pré-adolescentes
               </h1>
               <p className="mt-4 font-titulo text-[clamp(1.2rem,2vw,1.5rem)] italic leading-snug text-tinta-2">
                 Escuta e cuidado para adolescentes e pré-adolescentes.
@@ -43,8 +43,8 @@ const Index = () => {
             </Revela>
             <Revela atraso={0.08}>
               <p className="lead mt-5 max-w-[48ch]">
-                Atendimento psicológico online para famílias de Araruama, RJ, em um espaço seguro e sem julgamentos,
-                com respeito ao ritmo de cada jovem e ao papel da família.
+                Atendimento psicológico presencial no Centro de Araruama e online, em um espaço seguro e sem
+                julgamentos, com respeito ao ritmo de cada jovem e ao papel da família.
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
                 <BotaoWhatsApp referencia={HOME.ref}>Conversar pelo WhatsApp</BotaoWhatsApp>
@@ -53,8 +53,8 @@ const Index = () => {
                 </a>
               </div>
               <ul className="mt-10 flex flex-wrap gap-x-7 gap-y-2 border-t border-fio pt-6 text-[0.68rem] uppercase tracking-[0.16em] text-suave">
-                <li className="inline-flex items-center gap-2"><Wind className="h-3.5 w-3.5 text-ouro-tinta" aria-hidden="true" /> Atendimento online</li>
-                <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-ouro-tinta" aria-hidden="true" /> {CONTATO.localidade}</li>
+                <li className="inline-flex items-center gap-2"><Wind className="h-3.5 w-3.5 text-ouro-tinta" aria-hidden="true" /> Presencial e online</li>
+                <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-ouro-tinta" aria-hidden="true" /> Centro · {CONTATO.localidade}</li>
               </ul>
             </Revela>
           </div>
@@ -132,7 +132,7 @@ const Index = () => {
             <div className="max-w-[56ch] space-y-5 text-suave">
               <p>
                 Sou <strong className="font-semibold text-tinta">{PROFISSIONAL.nome}</strong>, psicóloga ({PROFISSIONAL.crp}).
-                Atendo pré-adolescentes e adolescentes de forma online.
+                Atendo pré-adolescentes e adolescentes, presencialmente em Araruama e online.
               </p>
               <p>
                 Meu trabalho parte da escuta: entender a história de cada jovem antes de propor qualquer caminho,

@@ -15,8 +15,8 @@ import { TEMPOS } from "virtual:textos-tempos";
    clínico é dela: a casa não publica texto de saúde sem revisão (parecer do
    Jurídico de 13/11/2026 — *scaled content abuse* e Res. CFP 3/2007).
 
-   ⚠️ Título e descrição que citam "Araruama" levam "online" junto (A4): "psicóloga
-   em Araruama" sem "online" sugere consultório, e ela atende só online.
+   ℹ️ Desde 13/11/2026 ela atende também presencialmente no Centro de Araruama (sala 514, Edifício Delfim Carvalho),
+   então "Araruama" no título não exige mais a palavra "online" (era regra do Jurídico enquanto ela atendia só online).
 
    O que NÃO entra em página nenhuma: depoimento · antes e depois · número de
    pacientes · promessa de resultado · preço · desconto · "primeira sessão
@@ -98,7 +98,7 @@ export const PAGINAS: readonly Pagina[] = [
     slug: "psicologo-para-adolescente-em-araruama-como-escolher",
     ref: "A4",
     grupo: "Para começar",
-    // ⚠️ "Araruama" sempre com "online" no título (regra do Jurídico). Só este texto cita a cidade no título e no slug.
+    // Só este texto cita a cidade no título e no slug.
     titulo: "Psicólogo para adolescente em Araruama: como escolher, inclusive online",
     h1: "Psicólogo para adolescente em Araruama: como escolher, inclusive online",
     descricao: "Como escolher um psicólogo para o seu filho adolescente: o que conferir no CRP, o que perguntar e o que muda entre atendimento presencial e online.",
