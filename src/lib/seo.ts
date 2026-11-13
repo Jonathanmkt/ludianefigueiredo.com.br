@@ -19,7 +19,7 @@ const NOME_SERVICO = `${PROFISSIONAL.nome} · ${PROFISSIONAL.profissao}`;
 const CRP_NUMERO = PROFISSIONAL.crp.replace("CRP ", "");
 
 export const HOME_TITULO = `${PROFISSIONAL.nome} · Psicóloga online para adolescentes · ${CONTATO.localidade} · ${PROFISSIONAL.crp}`;
-export const HOME_DESCRICAO = `Psicóloga online para pré-adolescentes e adolescentes, em ${CONTATO.localidade}. A primeira conversa com a família é pelo WhatsApp. ${PROFISSIONAL.crp}.`;
+export const HOME_DESCRICAO = `Psicóloga online para pré-adolescentes e adolescentes, em ${CONTATO.localidade}. O contato inicial é pelo WhatsApp. ${PROFISSIONAL.crp}.`;
 
 /** Uma rota a pré-renderizar. `caminho` é o que o navegador pede; o arquivo sai de `arquivo`. */
 export type Rota = {

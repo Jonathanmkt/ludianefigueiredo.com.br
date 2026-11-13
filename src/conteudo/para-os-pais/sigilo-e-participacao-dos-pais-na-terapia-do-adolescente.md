@@ -51,7 +51,7 @@ Quanto ao que exatamente é compartilhado em cada situação, não há uma lista
 
 Se a família precisar de um documento escrito, como uma declaração de que o adolescente está em acompanhamento ou um relatório, pode pedi-lo à psicóloga. O documento é feito a pedido, entregue numa conversa de devolução, e não reproduz o que foi dito nas sessões (Resolução CFP 6/2019, arts. 4º, 6º e 16).
 
-A psicóloga também mantém um registro do atendimento, que é sigiloso (Resolução CFP 1/2009). Como os responsáveis podem ter acesso a esse registro segue as regras do Conselho, e a psicóloga explica isso no início.
+A psicóloga mantém um prontuário do atendimento, que é sigiloso (Resolução CFP 1/2009). Como representantes legais do adolescente, os responsáveis têm direito de acesso ao prontuário, na forma prevista pelo Conselho, e a psicóloga explica isso no início.
 
 ## Por que o sigilo importa tanto para o adolescente?
 
