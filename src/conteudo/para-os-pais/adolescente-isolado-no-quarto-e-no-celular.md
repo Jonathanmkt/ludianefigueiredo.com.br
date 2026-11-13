@@ -78,7 +78,7 @@ Se ele falar em se machucar ou em não querer viver, procure ajuda no mesmo dia:
 
 ## O que você pode fazer em casa?
 
-Escute sem julgar. Procure um momento tranquilo, sem pressa e sem tela, e comece por algo leve, como "senti sua falta hoje". A PeNSE 2024 (IBGE) mostra que pouco mais de um terço dos estudantes de 13 a 17 anos sentem que os pais não entendem seus problemas e preocupações. Esse número fala sobre diálogo, não sobre culpa: mostra que vale a pena ouvir mais do que falar.
+Escute sem julgar. Procure um momento tranquilo, sem pressa e sem tela, e comece por algo leve, como "senti sua falta hoje". A PeNSE 2024 (IBGE) mostra que 63,4% dos estudantes de 13 a 17 anos disseram que os pais ou responsáveis entendem seus problemas e preocupações na maioria das vezes ou sempre; para os demais, isso nem sempre acontece. Esse número fala sobre diálogo, não sobre culpa: mostra que vale a pena ouvir mais do que falar.
 
 Mantenha a rotina da casa, com sono e refeições em horários parecidos, e deixe claro que a porta está aberta, mesmo quando ele não quer falar naquele dia.
 

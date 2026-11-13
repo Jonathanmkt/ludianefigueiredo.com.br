@@ -31,7 +31,7 @@ relacionados: [ansiedade-na-adolescencia, meu-filho-nao-quer-fazer-terapia-como-
 
 Um adolescente precisa de psicólogo quando o sofrimento dura semanas, é intenso e começa a atrapalhar a escola, o sono, os amigos ou a vida em casa. Fases difíceis fazem parte da idade e, sozinhas, não indicam problema. O que pesa é quanto tempo dura, a intensidade e o prejuízo no dia a dia.
 
-Se você procurou como saber se meu filho precisa de psicólogo, provavelmente algo no seu filho chamou a sua atenção. Esse cuidado já é um bom começo. Vamos por partes.
+Quando algo no seu filho chama a atenção, é natural perguntar se ele precisa de um psicólogo. Esse cuidado já é um bom começo. Vamos por partes.
 
 ## Toda fase difícil é motivo para procurar um psicólogo?
 
@@ -59,7 +59,7 @@ O que isso quer dizer na prática: os desafios aparecem cedo e podem mudar de fo
 
 ## Como puxar o assunto com o meu filho?
 
-Muitos adolescentes não falam quando são pressionados. A PeNSE 2024 (IBGE) mostra que pouco mais de um terço dos estudantes de 13 a 17 anos sentem que os pais não entendem seus problemas e preocupações. Isso não é culpa de ninguém: é um convite para escutar mais e perguntar menos.
+Muitos adolescentes não falam quando são pressionados. A PeNSE 2024 (IBGE) mostra que 63,4% dos estudantes de 13 a 17 anos disseram que os pais ou responsáveis entendem seus problemas e preocupações na maioria das vezes ou sempre; para os demais, isso nem sempre acontece. Isso não é culpa de ninguém: é um convite para escutar mais e perguntar menos.
 
 Algumas ideias simples:
 

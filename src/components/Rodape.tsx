@@ -27,7 +27,7 @@ const Rodape = () => {
           <span>
             © 2026 {PROFISSIONAL.nome} · {PROFISSIONAL.profissao} · {PROFISSIONAL.crp}
           </span>
-          <span>Este site não coleta dados pessoais nem usa cookies.</span>
+          <span>Este site não usa cookies nem ferramentas de rastreamento.</span>
         </div>
       </div>
     </footer>

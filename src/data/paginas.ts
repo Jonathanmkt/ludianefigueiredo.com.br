@@ -54,6 +54,8 @@ export const HOME = {
 /** A página-lista e a faixa da home. Só existem com ao menos um texto publicado. */
 export const LISTA = {
   rotulo: "Para os pais",
+  /** Código neutro de WhatsApp da página-lista (a home é A0). */
+  ref: "L0",
   caminho: "/para-os-pais/",
   titulo: "Para os pais de adolescentes",
   h1: "Para os pais de adolescentes",

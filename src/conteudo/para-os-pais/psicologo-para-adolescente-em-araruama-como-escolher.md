@@ -28,7 +28,7 @@ fontes:
 relacionados: [terapia-online-para-adolescentes, sigilo-e-participacao-dos-pais-na-terapia-do-adolescente, meu-filho-adolescente-precisa-de-psicologo]
 ---
 
-Para escolher um psicólogo para o seu filho adolescente, comece por três passos. Confira o registro do profissional no Conselho de Psicologia, pergunte sobre a experiência com adolescentes e a forma de trabalho, e veja se o atendimento, presencial ou online, cabe na rotina da sua família. Para quem procura psicólogo para adolescente em Araruama, vale olhar também o atendimento online. Este texto explica o que olhar em cada ponto.
+Para escolher um psicólogo para o seu filho adolescente, comece por três passos. Confira o registro do profissional no Conselho de Psicologia, pergunte sobre a experiência com adolescentes e a forma de trabalho, e veja se o atendimento, presencial ou online, cabe na rotina da sua família. Quem procura psicólogo para adolescente em Araruama tem mais opções do que parece: o atendimento online também é uma possibilidade. Este texto explica o que olhar em cada ponto.
 
 ## Como conferir se o psicólogo é registrado?
 

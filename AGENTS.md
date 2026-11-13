@@ -4,7 +4,7 @@ Site de página única da psicóloga **Ludiane Figueiredo** (CRP 05/56264): aten
 pré-adolescentes e adolescentes. Montado em 12/11/2026 a partir da prévia "Marca" aprovada pelo CEO
 (`comunicacao/editor-de-video/apresentacoes/ludiane-figueiredo-home/`) e da identidade do cartão de visita.
 
-**Estado: pronto para publicar, ainda NÃO publicado.** O deploy espera o CEO comprar o domínio e pedir.
+**Estado: no ar desde 13/11/2026** (GitHub Pages, ludianefigueiredo.com.br). Todo push na `main` publica.
 
 ## Stack — a mesma do `virtuetech.com.br`
 
@@ -90,8 +90,8 @@ mestre e rode o script. `scripts/fonte/` é cache e não entra no git.
 - **A home cita "Araruama, RJ" já no primeiro parágrafo**, junto de "online": é a página de destino do anúncio de busca, e a
   relevância da página pesa na qualidade do anúncio.
 - **Nenhuma requisição a terceiro.** Fontes servidas pelo próprio domínio, sem analytics, sem
-  cookie, sem formulário. É o que sustenta a frase do rodapé *"não coleta dados pessoais nem usa
-  cookies"* — **acrescentar qualquer script de terceiro exige tirar essa frase e rever a LGPD**.
+  cookie, sem formulário. É o que sustenta a frase do rodapé *"não usa cookies nem ferramentas de
+  rastreamento"* (o GitHub Pages registra o IP de quem acessa, por isso a frase NÃO diz "não coleta dados") — **acrescentar qualquer script de terceiro exige tirar essa frase e rever a LGPD**.
 - **O dourado do cartão é `ouro` (#B99A62) e só decora.** Sobre o creme ele dá 2,3:1 e reprova;
   texto dourado usa `ouro-tinta`. Sobre o carvão (`bg-tinta`) o `ouro` passa (4,65:1).
 - **Sem `scroll-behavior: smooth`**, de propósito. Movimento reduzido TROCA o gesto por esmaecer

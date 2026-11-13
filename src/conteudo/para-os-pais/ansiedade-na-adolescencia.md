@@ -31,7 +31,7 @@ relacionados: [tristeza-irritacao-e-desanimo-na-adolescencia, escola-provas-e-en
 
 A ansiedade é normal na adolescência: provas, amizades e a vontade de ser aceito deixam qualquer jovem preocupado. Ela merece atenção quando é constante, forte e começa a atrapalhar a escola, o sono, os amigos ou a vida em casa. Nesse caso, vale conversar com um profissional.
 
-Se você procurou por ansiedade em adolescentes e sintomas, provavelmente viu seu filho mais tenso, preocupado ou irritado do que de costume. Abaixo, o que é esperado, o que pede cuidado e como você pode ajudar.
+Ver o filho mais tenso, preocupado ou irritado do que de costume é, em geral, o que leva os pais a buscar informação sobre ansiedade na adolescência. Abaixo, o que é esperado, o que pede cuidado e como você pode ajudar.
 
 ## A ansiedade na adolescência é comum?
 

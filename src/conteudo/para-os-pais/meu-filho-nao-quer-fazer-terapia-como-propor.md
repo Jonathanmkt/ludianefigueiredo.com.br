@@ -79,4 +79,4 @@ Segundo o NIMH (Estados Unidos), vale buscar ajuda quando as emoções ou o comp
 - Procure o pediatra, que pode orientar e encaminhar, e conversar com a escola se houver mudança de rendimento.
 - Cuide de você também. Pais mais calmos conseguem conversar melhor.
 
-Segundo a Pesquisa Nacional de Saúde do Escolar (IBGE, 2024), pouco mais de um terço dos estudantes de 13 a 17 anos sentem que os pais não entendem seus problemas e preocupações. Escutar, de verdade, já é uma forma de cuidado.
+Segundo a Pesquisa Nacional de Saúde do Escolar (IBGE, 2024), 63,4% dos estudantes de 13 a 17 anos disseram que os pais ou responsáveis entendem seus problemas e preocupações na maioria das vezes ou sempre; para os demais, isso nem sempre acontece. Escutar, de verdade, já é uma forma de cuidado.

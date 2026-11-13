@@ -30,7 +30,7 @@ relacionados: [ansiedade-na-adolescencia, adolescente-isolado-no-quarto-e-no-cel
 
 Oscilar entre o bom humor e o mau humor faz parte da adolescência. A tristeza e a irritação merecem mais atenção quando duram semanas, são intensas e começam a atrapalhar a escola, o sono, os amigos ou o convívio em casa. Aí vale conversar com um profissional.
 
-Se você buscou saber o que deixa um adolescente triste, ou por que ele anda tão irritado e isolado, este texto mostra o que costuma ser esperado, o que pede cuidado e o que fazer.
+É comum os pais se perguntarem o que deixa um adolescente triste, ou por que ele anda tão irritado e isolado. Este texto mostra o que costuma ser esperado, o que pede cuidado e o que fazer.
 
 ## O que deixa um adolescente triste ou irritado?
 

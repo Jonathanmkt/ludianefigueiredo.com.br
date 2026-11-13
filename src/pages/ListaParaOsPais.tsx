@@ -1,7 +1,7 @@
 import Cabecalho from "@/components/Cabecalho";
 import BotaoWhatsApp from "@/components/BotaoWhatsApp";
 import Rodape from "@/components/Rodape";
-import { GRUPOS, HOME, LISTA, caminhoDe, dataBR, minutosDe, paginasDaRota } from "@/data/paginas";
+import { GRUPOS, LISTA, caminhoDe, dataBR, minutosDe, paginasDaRota } from "@/data/paginas";
 
 const LINK = "underline decoration-fio-2 underline-offset-4 hover:text-ouro-tinta";
 
@@ -61,7 +61,7 @@ const ListaParaOsPais = () => {
 
           <aside aria-label="Conversar" className="mt-16 bg-tinta px-7 py-9 text-center text-papel">
             <p className="mx-auto mb-6 max-w-[38ch] font-titulo text-[1.5rem] leading-snug">Vamos conversar?</p>
-            <BotaoWhatsApp referencia={HOME.ref} claro>Falar pelo WhatsApp</BotaoWhatsApp>
+            <BotaoWhatsApp referencia={LISTA.ref} claro>Falar pelo WhatsApp</BotaoWhatsApp>
           </aside>
         </div>
       </main>

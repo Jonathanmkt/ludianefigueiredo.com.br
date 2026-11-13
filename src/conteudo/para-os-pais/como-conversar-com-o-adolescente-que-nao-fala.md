@@ -31,7 +31,7 @@ Quando um adolescente não conversa com os pais, na maioria das vezes não é de
 
 Há vários motivos, e quase nunca é um só. Calar-se faz parte de crescer: o adolescente quer ter um mundo só dele, resolve coisas sozinho e conversa mais com os amigos. A Sociedade Brasileira de Pediatria (SBP, 2025) inclui o desejo de privacidade entre os comportamentos esperados nessa idade.
 
-Mas existe outro motivo, que dói mais em quem ama: ele pode achar que os pais não vão entender. Segundo a Pesquisa Nacional de Saúde do Escolar (PeNSE 2024, IBGE), pouco mais de um terço dos estudantes de 13 a 17 anos sentem que os pais não entendem seus problemas e preocupações. A pesquisa mostra também que 26,1% sentem que ninguém se preocupa com eles. É a percepção do jovem, não um julgamento sobre os pais. Mostra que muitos adolescentes não se sentem ouvidos, e que há espaço para a família tentar de outro jeito.
+Mas existe outro motivo, que dói mais em quem ama: ele pode achar que os pais não vão entender. Segundo a Pesquisa Nacional de Saúde do Escolar (PeNSE 2024, IBGE), 63,4% dos estudantes de 13 a 17 anos disseram que os pais ou responsáveis entendem seus problemas e preocupações na maioria das vezes ou sempre; para os demais, isso nem sempre acontece. A pesquisa mostra também que 26,1% sentem que ninguém se preocupa com eles. É a percepção do jovem, não um julgamento sobre os pais. Mostra que muitos adolescentes não se sentem ouvidos, e que há espaço para a família tentar de outro jeito.
 
 Também pesa a vergonha, o medo de ser repreendido, o cansaço do dia ou a sensação de que o assunto "não tem solução". Às vezes ele quer falar, só não sabe como começar.
 

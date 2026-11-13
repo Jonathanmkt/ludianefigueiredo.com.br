@@ -27,7 +27,7 @@ relacionados: [tristeza-irritacao-e-desanimo-na-adolescencia, como-conversar-com
 
 Na adolescência, a autoestima e a imagem do corpo pesam muito porque o corpo muda, o grupo de amigos passa a contar mais e o jovem se compara o tempo todo. Insegurança com a aparência é comum. Ela merece atenção quando dura semanas, é intensa e atrapalha a escola, os amigos, o sono ou a vida em casa.
 
-Se você pesquisou por autoestima do adolescente ou por um filho insatisfeito com o corpo, este texto mostra o que a pesquisa diz, o que não dá para medir e como conversar em casa.
+Autoestima e imagem corporal pesam muito na adolescência, e muitos pais se preocupam com um filho insatisfeito com o corpo. Este texto mostra o que a pesquisa diz, o que não dá para medir e como conversar em casa.
 
 ## Por que a imagem do corpo importa tanto nessa idade?
 
