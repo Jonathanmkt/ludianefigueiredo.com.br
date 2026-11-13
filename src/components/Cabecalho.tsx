@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NAVEGACAO, PROFISSIONAL } from "@/data/conteudo";
+import { LISTA, temLista } from "@/data/paginas";
 import { CURVA } from "@/lib/movimento";
 
 /** O painel desce a página inteira junto, então o tempo é de bloco grande: 0,4 s. */
@@ -16,14 +17,22 @@ const CURVA_MENU = `cubic-bezier(${CURVA.padrao.join(",")})`;
  * lugar — painel preso em 1 px e transparente, sem erro algum. CSS não depende disso.) O CEO pediu assim (12/11/2026). Sobreposto ele não empurrava nada; no fluxo e sem
  * animar a altura, empurrava tudo de uma vez — o que é o pior dos dois.
  */
-const Cabecalho = () => {
+const Cabecalho = ({ interna = false }: { interna?: boolean }) => {
   const [aberto, setAberto] = useState(false);
+  // Nas páginas internas as âncoras da home precisam do `/` na frente; na home ficam como estavam.
+  const prefixo = interna ? "/" : "";
+  const itens: { rotulo: string; href: string }[] = NAVEGACAO.map((item) => ({ rotulo: item.rotulo, href: prefixo + item.href }));
+  // "Para os pais" leva à página-lista e só existe quando há texto publicado. Entra depois de "Sobre mim".
+  if (temLista()) {
+    const depoisDe = itens.findIndex((i) => i.href.endsWith("#sobre"));
+    itens.splice(depoisDe + 1, 0, { rotulo: LISTA.rotulo, href: LISTA.caminho });
+  }
   const fechar = () => setAberto(false);
 
   return (
     <header className="sticky top-0 z-40 border-b border-fio bg-superficie/95 backdrop-blur">
       <div className="container flex items-center justify-between gap-6 py-4">
-        <a href="#inicio" className="flex flex-col leading-tight" onClick={fechar} aria-label={`${PROFISSIONAL.nome}, ${PROFISSIONAL.profissao} — início`}>
+        <a href={interna ? "/" : "#inicio"} className="flex flex-col leading-tight" onClick={fechar} aria-label={`${PROFISSIONAL.nome}, ${PROFISSIONAL.profissao} — início`}>
           <span className="font-titulo text-[1.1rem] uppercase tracking-[0.2em] text-tinta sm:text-[1.22rem]">
             {PROFISSIONAL.nome}
           </span>
@@ -33,7 +42,7 @@ const Cabecalho = () => {
         </a>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Principal">
-          {NAVEGACAO.slice(1).map((item) => (
+          {itens.slice(1).map((item) => (
             <a
               key={item.href}
               href={item.href}
@@ -74,7 +83,7 @@ const Cabecalho = () => {
       >
         <div className="overflow-hidden">
           <ul className="container flex flex-col border-t border-fio py-2">
-            {NAVEGACAO.map((item) => (
+            {itens.map((item) => (
               <li key={item.href} className="border-b border-fio last:border-0">
                 <a
                   href={item.href}

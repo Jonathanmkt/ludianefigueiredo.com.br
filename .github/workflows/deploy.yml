@@ -35,10 +35,8 @@ jobs:
       - name: Build
         run: npm run build
 
-      # Fallback de SPA: GitHub Pages serve 404.html em rotas desconhecidas;
-      # sendo uma cópia do index, o React Router assume a rota no cliente.
-      - name: SPA 404 fallback
-        run: cp dist/index.html dist/404.html
+      # O 404.html (com noindex) já sai do build: scripts/prerender.mjs o gera.
+      # ⚠️ NÃO copie dist/index.html por cima dele: rota inexistente voltaria a mostrar a home.
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

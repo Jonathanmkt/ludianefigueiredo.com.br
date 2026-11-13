@@ -1,11 +1,12 @@
-import { CloudRain, HeartPulse, Instagram, Mail, MapPin, Sprout, Users, Wind } from "lucide-react";
+import { ChevronDown, CloudRain, Instagram, Mail, MapPin, Sprout, Users, Wind } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import Cabecalho from "@/components/Cabecalho";
 import Revela from "@/components/Revela";
 import { IconeWhatsApp } from "@/components/Icones";
-import { Button } from "@/components/ui/button";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import BotaoWhatsApp from "@/components/BotaoWhatsApp";
+import Rodape from "@/components/Rodape";
 import { CONTATO, DADOS_SOBRE, DUVIDAS, ETAPAS, PROFISSIONAL, TEMAS } from "@/data/conteudo";
+import { HOME, LISTA, caminhoDe, paginasPublicadas } from "@/data/paginas";
 
 const ICONES_TEMA: Record<(typeof TEMAS)[number]["icone"], LucideIcon> = {
   ansiedade: Wind,
@@ -14,25 +15,9 @@ const ICONES_TEMA: Record<(typeof TEMAS)[number]["icone"], LucideIcon> = {
   relacoes: Users,
 };
 
-/** O botão da casa: pílula carvão, texto creme. Sempre um link (`asChild`), nunca um <button> que navega. */
-const BotaoWhatsApp = ({ children, claro = false }: { children: React.ReactNode; claro?: boolean }) => (
-  <Button
-    asChild
-    size="lg"
-    className={
-      claro
-        ? "h-12 rounded-full bg-papel px-7 font-corpo text-[0.9rem] text-tinta hover:bg-superficie"
-        : "h-12 rounded-full bg-tinta px-7 font-corpo text-[0.9rem] text-papel shadow-[0_26px_50px_-30px_rgba(60,50,30,.7)] hover:bg-tinta-2"
-    }
-  >
-    <a href={CONTATO.whatsappLink} target="_blank" rel="noopener noreferrer">
-      <IconeWhatsApp className="!size-5" />
-      {children}
-    </a>
-  </Button>
-);
-
-const Index = () => (
+const Index = () => {
+  const leituras = paginasPublicadas();
+  return (
   <>
     <a
       href="#conteudo"
@@ -49,17 +34,20 @@ const Index = () => (
           <div className="order-2 self-center py-10 lg:order-1 lg:py-24">
             <Revela>
               <span className="estrela mb-6" aria-hidden="true" />
-              <h1 className="max-w-[17ch] text-[clamp(2.2rem,4.4vw,3.4rem)] font-light leading-[1.12]">
-                Escuta e cuidado para <span className="font-manuscrita text-[1.18em] font-normal text-ouro-tinta">adolescentes</span> e pré-adolescentes.
+              <h1 className="max-w-[24ch] text-balance text-[clamp(2.05rem,4vw,3.1rem)] font-light leading-[1.14]">
+                Psicóloga online para <span className="font-manuscrita text-[1.18em] font-normal text-ouro-tinta">adolescentes</span> e pré-adolescentes
               </h1>
+              <p className="mt-4 font-titulo text-[clamp(1.2rem,2vw,1.5rem)] italic leading-snug text-tinta-2">
+                Escuta e cuidado para adolescentes e pré-adolescentes.
+              </p>
             </Revela>
             <Revela atraso={0.08}>
-              <p className="lead mt-6 max-w-[48ch]">
-                Atendimento psicológico online, em um espaço seguro e sem julgamentos, com respeito ao ritmo de cada
-                jovem e ao papel da família.
+              <p className="lead mt-5 max-w-[48ch]">
+                Atendimento psicológico online para famílias de Araruama, RJ, em um espaço seguro e sem julgamentos,
+                com respeito ao ritmo de cada jovem e ao papel da família.
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
-                <BotaoWhatsApp>Conversar pelo WhatsApp</BotaoWhatsApp>
+                <BotaoWhatsApp referencia={HOME.ref}>Conversar pelo WhatsApp</BotaoWhatsApp>
                 <a href="#acompanhamento" className="text-[0.74rem] uppercase tracking-[0.16em] text-tinta-2 underline decoration-ouro decoration-1 underline-offset-8 hover:text-ouro-tinta">
                   Como funciona
                 </a>
@@ -79,7 +67,7 @@ const Index = () => (
               height={1264}
               alt="Ludiane Figueiredo, psicóloga, sorrindo"
               className="foto-fundida absolute inset-0 h-full w-full object-cover object-[50%_0] mix-blend-multiply"
-              fetchPriority="high"
+              {...{ fetchpriority: "high" }} // React 18 só repassa o atributo em minúsculas (`fetchPriority` é descartado)
               decoding="async"
             />
           </Revela>
@@ -165,6 +153,36 @@ const Index = () => (
         </div>
       </section>
 
+      {/* ============ PARA OS PAIS (só existe com texto publicado) ============ */}
+      {leituras.length > 0 && (
+        <section id="para-os-pais" className="border-b border-fio">
+          <div className="container py-20 lg:py-24">
+            <Revela className="mb-10 max-w-[40rem]">
+              <p className="rotulo mb-5">{LISTA.rotulo}</p>
+              <h2 className="titulo-secao">{LISTA.titulo}</h2>
+              <p className="lead mt-5">{LISTA.abertura}</p>
+            </Revela>
+            <ul className="grid gap-px overflow-hidden rounded-sm border border-fio bg-fio md:grid-cols-2">
+              {leituras.slice(0, 6).map((p) => (
+                <li key={p.slug} className="bg-superficie p-7">
+                  <h3 className="text-[1.3rem] leading-snug">
+                    <a className="hover:text-ouro-tinta" href={caminhoDe(p)}>{p.h1}</a>
+                  </h3>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-8">
+              <a
+                href={LISTA.caminho}
+                className="text-[0.74rem] uppercase tracking-[0.16em] text-tinta-2 underline decoration-ouro decoration-1 underline-offset-8 hover:text-ouro-tinta"
+              >
+                Ver todos os textos
+              </a>
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* ============ DÚVIDAS ============ */}
       <section id="duvidas">
         <div className="container py-20 lg:py-24">
@@ -173,16 +191,20 @@ const Index = () => (
             <h2 className="titulo-secao">Antes de começar</h2>
           </Revela>
           <Revela className="mx-auto max-w-[50rem]">
-            <Accordion type="single" collapsible className="border-t border-fio">
-              {DUVIDAS.map((d, i) => (
-                <AccordionItem value={`d${i}`} key={d.p} className="border-b border-fio">
-                  <AccordionTrigger className="py-6 text-left font-titulo text-[1.25rem] font-normal text-tinta hover:text-ouro-tinta hover:no-underline">
+            {/* <details> em vez de Accordion do Radix: a resposta fica no HTML mesmo fechada
+                (o Radix só monta o conteúdo aberto), e o Google e o leitor sem JS a enxergam.
+                `name` torna o grupo exclusivo: abrir uma fecha a outra. */}
+            <div className="border-t border-fio">
+              {DUVIDAS.map((d) => (
+                <details key={d.p} name="duvidas" className="group border-b border-fio">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-6 text-left font-titulo text-[1.25rem] font-normal text-tinta hover:text-ouro-tinta [&::-webkit-details-marker]:hidden">
                     {d.p}
-                  </AccordionTrigger>
-                  <AccordionContent className="max-w-[62ch] pb-6 text-[0.98rem] text-suave">{d.r}</AccordionContent>
-                </AccordionItem>
+                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180" aria-hidden="true" />
+                  </summary>
+                  <p className="max-w-[62ch] pb-6 text-[0.98rem] text-suave">{d.r}</p>
+                </details>
               ))}
-            </Accordion>
+            </div>
           </Revela>
         </div>
       </section>
@@ -199,7 +221,7 @@ const Index = () => (
               Envie uma mensagem. Respondo para combinarmos a primeira conversa.
             </p>
             <div className="mt-9 flex justify-center">
-              <BotaoWhatsApp claro>Falar pelo WhatsApp</BotaoWhatsApp>
+              <BotaoWhatsApp referencia={HOME.ref} claro>Falar pelo WhatsApp</BotaoWhatsApp>
             </div>
             <ul className="mt-12 flex flex-col items-center justify-center gap-x-10 gap-y-3 text-[0.95rem] text-papel/85 sm:flex-row sm:flex-wrap">
               <li>
@@ -223,16 +245,9 @@ const Index = () => (
       </section>
     </main>
 
-    {/* ============ RODAPÉ ============ */}
-    <footer className="bg-tinta text-papel/70">
-      <div className="container flex flex-col gap-2 border-t border-papel/15 py-7 text-[0.78rem] sm:flex-row sm:items-center sm:justify-between">
-        <span>
-          © 2026 {PROFISSIONAL.nome} · {PROFISSIONAL.profissao} · {PROFISSIONAL.crp}
-        </span>
-        <span>Este site não coleta dados pessoais nem usa cookies.</span>
-      </div>
-    </footer>
+    <Rodape />
   </>
-);
+  );
+};
 
 export default Index;

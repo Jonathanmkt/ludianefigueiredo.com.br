@@ -26,9 +26,6 @@ export const PROFISSIONAL = {
 
 export const CONTATO = {
   whatsappRotulo: "(22) 98829-4387",
-  whatsappLink:
-    "https://wa.me/5522988294387?text=" +
-    encodeURIComponent("Olá, Ludiane! Vim pelo site e gostaria de conversar sobre o atendimento."),
   telefoneLink: "tel:+5522988294387",
   instagramRotulo: "@ludianebfigueiredo",
   instagramLink: "https://www.instagram.com/ludianebfigueiredo/",
@@ -37,6 +34,22 @@ export const CONTATO = {
   site: "ludianefigueiredo.com.br",
   localidade: "Araruama, RJ",
 } as const;
+
+/** O número de WhatsApp, só os dígitos, no formato do `wa.me`. */
+const WHATSAPP_NUMERO = "5522988294387";
+
+/**
+ * O link de WhatsApp de uma página, com a mensagem pronta e o código de origem (`ref`) dentro dela.
+ * É a medição sem tag: o código chega na primeira mensagem e a psicóloga sabe de qual página veio.
+ *
+ * ⚠️ O código é NEUTRO: `A0` é a home e `A1…An` são as páginas internas (ver `data/paginas.ts`).
+ * Ele nunca nomeia tema, sintoma nem condição — a mensagem de um adolescente não pode revelar
+ * por si só o assunto da família (parecer do Jurídico de 13/11/2026).
+ */
+export const whatsappLink = (ref: string): string =>
+  `https://wa.me/${WHATSAPP_NUMERO}?text=` +
+  encodeURIComponent(`Olá, Ludiane! Vim pelo site (ref. ${ref}) e gostaria de conversar sobre o atendimento.`);
+
 
 export const NAVEGACAO = [
   { rotulo: "Início", href: "#inicio" },
@@ -112,5 +125,9 @@ export const DUVIDAS = [
   {
     p: "Como agendo uma conversa?",
     r: "Pelo WhatsApp. Os horários disponíveis e os valores são informados diretamente, antes de começarmos.",
+  },
+  {
+    p: "O que é conversado nas sessões online é sigiloso?",
+    r: "Sim. O sigilo profissional vale no atendimento online da mesma forma. Aos responsáveis compartilho apenas o essencial para o cuidado, e é importante que o jovem tenha um lugar tranquilo e privado durante a sessão.",
   },
 ] as const;

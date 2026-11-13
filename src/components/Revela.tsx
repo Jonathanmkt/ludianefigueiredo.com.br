@@ -55,6 +55,7 @@ const Revela = ({
   return (
     <Tag
       className={className}
+      data-revela=""
       variants={revelacao(semMovimento, desloca, duracao)}
       initial="parado"
       whileInView="visivel"
