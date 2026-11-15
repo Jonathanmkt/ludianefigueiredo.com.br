@@ -13,10 +13,14 @@
     <title>Ludiane Figueiredo · Psicóloga · CRP 05/56264</title>
     <!--/head-rota-->
 
-    <!-- O SVG é o ícone; o PNG é reserva e o único que o iOS aceita como apple-touch-icon. -->
+    <!-- Favicon (Google Search Central, "Define a favicon"): ícone quadrado, múltiplo de 48 px, mesmo
+         endereço em todas as rotas. O /favicon.ico real (16/32/48) fica na raiz; o Google lê o <link>. -->
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
     <link rel="icon" type="image/svg+xml" href="/marca-ludiane.svg" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="/marca-ludiane.png" />
-    <link rel="apple-touch-icon" href="/marca-ludiane.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- As fontes vêm do próprio domínio (public/fontes/): nenhuma requisição a terceiro. -->
     <link rel="preload" href="/fontes/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin />

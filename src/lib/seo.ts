@@ -1,5 +1,6 @@
 import { CONTATO, PROFISSIONAL } from "@/data/conteudo";
-import { HOME, LISTA, caminhoDe, paginasPublicadas, temLista } from "@/data/paginas";
+import { tagGoogleHtml } from "@/lib/tag-google";
+import { HOME, LISTA, PRIVACIDADE, caminhoDe, paginasPublicadas, temLista } from "@/data/paginas";
 import type { Pagina } from "@/data/paginas";
 
 /* ===========================================================================
@@ -8,8 +9,8 @@ import type { Pagina } from "@/data/paginas";
    Fonte única: os dados vêm de `conteudo.ts` e `paginas.ts`. Não há mais
    título, descrição nem JSON-LD escritos à mão no `index.html`.
 
-   ⚠️ Sem requisição a terceiro: nada aqui aponta para fora do próprio domínio
-   (exceto o `sameAs` do Instagram, que é dado estruturado, não requisição).
+   ⚠️ Única requisição a terceiro: a tag do Google Ads, só no <head> da home
+   (`tag-google.ts`). O `sameAs` do Instagram é dado estruturado, não requisição.
    =========================================================================== */
 
 export const SITE = `https://${CONTATO.site}`;
@@ -77,6 +78,14 @@ export const rotasIndexaveis = (): Rota[] => {
       atualizadaEm: p.atualizadaEm,
     });
   }
+  rotas.push({
+    caminho: PRIVACIDADE.caminho,
+    arquivo: "privacidade/index.html",
+    titulo: `${PRIVACIDADE.titulo}${SUFIXO}`,
+    descricao: PRIVACIDADE.descricao,
+    trilha: [{ nome: PRIVACIDADE.rotulo, caminho: PRIVACIDADE.caminho }],
+    atualizadaEm: PRIVACIDADE.atualizadaEm,
+  });
   return rotas;
 };
 
@@ -199,6 +208,8 @@ export const cabecaDaRota = (rota: Rota): string => {
     // `<` escapado: o JSON nunca consegue fechar o <script> por acidente.
     `<script type="application/ld+json">${JSON.stringify(grafo(rota)).replace(/</g, "\\u003c")}</script>`,
   );
+  // A tag de conversão do Google Ads: SÓ na home (ver `lib/tag-google.ts`).
+  if (rota.caminho === "/") linhas.push(tagGoogleHtml());
   return linhas.join("\n    ");
 };
 

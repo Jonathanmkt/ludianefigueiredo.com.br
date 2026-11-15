@@ -4,6 +4,7 @@ import Index from "./pages/Index";
 import NaoEncontrada from "./pages/NaoEncontrada";
 import PaginaTexto from "./pages/PaginaTexto";
 import ListaParaOsPais from "./pages/ListaParaOsPais";
+import Privacidade from "./pages/Privacidade";
 import { LISTA, paginasDaRota } from "./data/paginas";
 
 /**
@@ -24,6 +25,7 @@ const App = () => (
       {paginasDaRota().map((p) => (
         <Route key={p.slug} path={`${LISTA.caminho}${p.slug}`} element={<PaginaTexto pagina={p} />} />
       ))}
+      <Route path="/privacidade" element={<Privacidade />} />
       <Route path="*" element={<NaoEncontrada />} />
     </Routes>
   </LazyMotion>

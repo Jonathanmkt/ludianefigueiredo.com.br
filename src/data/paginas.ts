@@ -48,7 +48,7 @@ export type Pagina = {
 export const HOME = {
   ref: "A0",
   /** ⚠️ Mexeu no texto ou no desenho da home? Atualize esta data: ela é o `lastmod` do sitemap. */
-  atualizadaEm: "2026-11-13",
+  atualizadaEm: "2026-11-15",
 } as const;
 
 /** A página-lista e a faixa da home. Só existem com ao menos um texto publicado. */
@@ -61,6 +61,17 @@ export const LISTA = {
   h1: "Para os pais de adolescentes",
   abertura:
     "Textos da psicóloga Ludiane Figueiredo, CRP 05/56264, para entender a adolescência e saber quando buscar ajuda.",
+} as const;
+
+/** A página de privacidade: curta, honesta, no rodapé de toda página. ⚠️ Mudou o que o site mede? Atualize o texto e esta data. */
+export const PRIVACIDADE = {
+  caminho: "/privacidade/",
+  rotulo: "Privacidade",
+  titulo: "Privacidade",
+  h1: "Privacidade",
+  descricao: "O que o site de Ludiane Figueiredo, psicóloga, mede, o que o Google recebe e como falar sobre isso.",
+  ref: "P0",
+  atualizadaEm: "2026-11-15",
 } as const;
 
 const NASCE = { publicada: true, atualizadaEm: "2026-11-13" } as const;

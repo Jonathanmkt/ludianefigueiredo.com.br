@@ -27,7 +27,10 @@ const Rodape = () => {
           <span>
             © 2026 {PROFISSIONAL.nome} · {PROFISSIONAL.profissao} · {PROFISSIONAL.crp}
           </span>
-          <span>Este site não usa cookies nem ferramentas de rastreamento.</span>
+          <span>
+            Este site usa a medição de anúncios do Google (Google Ads) para saber quantas visitas chegam por anúncio.{" "}
+            <a className="underline decoration-papel/30 underline-offset-4 hover:text-ouro" href="/privacidade/">Privacidade</a>
+          </span>
         </div>
       </div>
     </footer>
