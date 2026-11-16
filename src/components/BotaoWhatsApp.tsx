@@ -7,8 +7,8 @@ import { registrarCliqueWhatsApp } from "@/lib/tag-google";
 
 /**
  * A origem de campanha que vem no endereço (`?o=G1`): só letras e números, até 6.
- * É lida no navegador e vai apenas para a mensagem pronta do WhatsApp. Nada é gravado,
- * nada é enviado a terceiro. O clique também dispara a conversão do Google Ads, mas só onde a tag existe (a home).
+ * É lida no navegador e vai para a mensagem pronta do WhatsApp e, como parâmetro `origem`, para o evento GA4 `clique_whatsapp`.
+ * Nada pessoal. O clique também dispara a conversão do Google Ads, só na home.
  */
 const origemDaUrl = (): string => {
   const o = new URLSearchParams(window.location.search).get("o") ?? "";
@@ -42,7 +42,7 @@ const BotaoWhatsApp = ({
           : "h-12 rounded-full bg-tinta px-7 font-corpo text-[0.9rem] text-papel shadow-[0_26px_50px_-30px_rgba(60,50,30,.7)] hover:bg-tinta-2"
       }
     >
-      <a href={whatsappLink(origem ? `${referencia}-${origem}` : referencia)} onClick={registrarCliqueWhatsApp} target="_blank" rel="noopener noreferrer">
+      <a href={whatsappLink(origem ? `${referencia}-${origem}` : referencia)} onClick={() => registrarCliqueWhatsApp(origem)} target="_blank" rel="noopener noreferrer">
         <IconeWhatsApp className="!size-5" />
         {children}
       </a>

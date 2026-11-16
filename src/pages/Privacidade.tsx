@@ -40,12 +40,13 @@ const Privacidade = () => (
         <div className="mt-10 flex max-w-[62ch] flex-col gap-4 leading-relaxed">
           <h2 className="rotulo mt-6">O que o site mede</h2>
           <p>
-            Só a página inicial usa a medição de anúncios do Google (Google Ads). Ela serve para saber quantas visitas chegam por anúncio e
-            quantas delas tocam no botão do WhatsApp. O toque no botão é contado como um evento simples: sem valor, sem nome, sem
-            telefone e sem o que você escreve na conversa.
+            Em todas as páginas o site usa o Google Analytics para medir as visitas: quais páginas foram vistas, de onde veio o clique
+            (o código curto da origem, como o de um anúncio) e quantas vezes o botão do WhatsApp foi tocado. Isso é contado sem identificar
+            pessoas: sem nome, sem telefone e sem o que você escreve na conversa. O endereço IP é anonimizado.
           </p>
           <p>
-            Nas páginas “Para os pais” e nesta página não há medição nenhuma. O que você lê lá não é enviado a ninguém.
+            Só na página inicial o Google Ads também mede conversões, para saber quantas visitas vindas de anúncio tocam no botão do
+            WhatsApp.
           </p>
           <p>
             A personalização de anúncios está desligada: o site não cria listas de visitantes nem faz remarketing. Para fazer a medição, o Google
@@ -54,7 +55,7 @@ const Privacidade = () => (
 
           <h2 className="rotulo mt-6">Fora do Brasil</h2>
           <p>
-            O Google pode tratar os dados dessa medição em servidores fora do Brasil, conforme as próprias regras dele.
+            O Google pode tratar os dados dessas medições em servidores fora do Brasil, conforme as próprias regras dele.
           </p>
 
           <h2 className="rotulo mt-6">Quem hospeda</h2>

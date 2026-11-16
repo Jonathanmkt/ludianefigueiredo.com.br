@@ -16,7 +16,7 @@ npm run lint
 - Página inicial e página 404 (com `noindex`).
 - Seção **Para os pais**: página-lista e 12 textos educativos em Markdown (`src/conteudo/para-os-pais/`). Cada texto tem `publicada: true|false` no cabeçalho; só os publicados entram no site e no sitemap.
 - **Pré-renderização no build**: `scripts/prerender.mjs` gera um HTML pronto por rota, com title, description, canonical, Open Graph e JSON-LD vindos de `src/lib/seo.ts`; o `sitemap.xml` também é gerado no build.
-- Botão de WhatsApp com código de origem de campanha: `?o=G1` na URL vira a mensagem `A0-G1`. A única medição de terceiro é a tag de conversão do Google Ads, só na home (ver `AGENTS.md` e `/privacidade/`).
+- Botão de WhatsApp com código de origem de campanha: `?o=G1` na URL vira a mensagem `A0-G1`. A única medição de terceiro é o Google: Analytics 4 em todas as rotas (menos a 404) e a conversão do Google Ads só na home, sem banner de consentimento e sem sinais de público (ver `AGENTS.md` e `/privacidade/`).
 - Verificação do Search Console em `public/google105ec52e2c3d93b0.html`.
 
 O workflow `.github/workflows/deploy.yml` roda o build completo e publica `dist/`.

@@ -28,7 +28,7 @@ const Rodape = () => {
             © 2026 {PROFISSIONAL.nome} · {PROFISSIONAL.profissao} · {PROFISSIONAL.crp}
           </span>
           <span>
-            Este site usa a medição de anúncios do Google (Google Ads) para saber quantas visitas chegam por anúncio.{" "}
+            Este site usa o Google Analytics para medir visitas, sem identificar pessoas; na página inicial, o Google Ads também mede conversões.{" "}
             <a className="underline decoration-papel/30 underline-offset-4 hover:text-ouro" href="/privacidade/">Privacidade</a>
           </span>
         </div>

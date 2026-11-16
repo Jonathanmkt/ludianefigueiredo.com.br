@@ -2,6 +2,12 @@
 
 Append-only, mais recente primeiro.
 
+## 2026-11-16 — Google Analytics 4 no site todo, sem banner, e o evento clique_whatsapp
+
+**O quê:** o site passou a carregar o GA4 (`G-VH28PF2KG4`, fluxo "Site Ludiane") em todas as rotas, menos a 404. Na home o `gtag.js` carrega uma vez pelo id do Ads e configura Ads + GA4; nas demais rotas carrega pelo id do GA4. O GA4 vai com sinais do Google e personalização desligados e IP anonimizado; `analytics_storage` granted em todas, `ad_storage` só na home. O clique no WhatsApp agora dispara o evento `clique_whatsapp` (parâmetro `origem` = código `?o=`, ou `direto`) em qualquer rota, e a conversão do Ads continua só na home. Rodapé e `/privacidade/` foram reescritos para dizer isso, com `atualizadaEm` de home e privacidade em 16/11.
+**Por quê:** a tag do Ads só enxergava a home; para saber o que a campanha local traz depois do clique (páginas lidas, origem) era preciso medir o site inteiro. O CEO decidiu em 17/11/2026, de novo, **sem banner de consentimento**; as proteções (sem remarketing, listas, User-ID nem sinais de público) vêm do parecer do Jurídico e não se afrouxam. O rodapé e a privacidade precisavam mudar porque passariam a mentir ("só a home mede"). O ID `G-` é público por natureza, como o `AW-`.
+**Arquivos-chave:** `src/lib/tag-google.ts`, `src/lib/seo.ts`, `src/components/BotaoWhatsApp.tsx`, `Rodape.tsx`, `src/pages/Privacidade.tsx`, `src/data/paginas.ts`, `AGENTS.md`.
+
 ## 2026-11-15 — Tag de conversão do Google Ads, página de privacidade e favicon novo
 
 **O quê:** a home passou a carregar a tag do Google Ads (`AW-18573150048`) e a registrar a conversão "Clique no WhatsApp" no `onClick` do botão, sem valor e sem dado. A tag é injetada pelo `seo.ts` apenas no `<head>` da rota `/` (nunca no `index.html`, nunca em "Para os pais" nem em `/privacidade/`), com `ad_user_data` e `ad_personalization` negados e sem remarketing. Nasceu a página `/privacidade/` (código `P0`, no sitemap) e o rodapé deixou de dizer "não usa cookies nem ferramentas de rastreamento": agora diz que usa a medição de anúncios do Google e leva à página. O favicon foi refeito: carvão com "lf" dourado engrossado, `favicon.ico` real na raiz (16/32/48), PNGs 48 e 192 e `apple-touch-icon` de 180 px, todos gerados por `scripts/gera-imagens.py`.

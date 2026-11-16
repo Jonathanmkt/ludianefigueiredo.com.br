@@ -80,7 +80,7 @@ mestre e rode o script. `scripts/fonte/` é cache e não entra no git.
 
 ## Decisões que não são óbvias pelo código
 
-- **Medição reserva, sem tag:** o link de WhatsApp (`whatsappLink(ref)` em `conteudo.ts`) leva um código neutro na mensagem pronta.
+- **Medição reserva, independente do Google:** o link de WhatsApp (`whatsappLink(ref)` em `conteudo.ts`) leva um código neutro na mensagem pronta.
 - **Origem de campanha (`?o=`):** quem chega por anúncio traz `?o=G1` no endereço (só letras e números, até 6). O
   `BotaoWhatsApp` lê isso **no navegador, depois de montar** (o HTML pré-renderizado sai sem origem, para a hidratação não
   divergir) e põe `A0-G1` na mensagem. Nada é gravado nem enviado a terceiro. **Os códigos das campanhas moram em
@@ -89,14 +89,15 @@ mestre e rode o script. `scripts/fonte/` é cache e não entra no git.
   e `og:type=article`. Mexeu no texto? Atualize `atualizadaEm` no `.md` **e** em `paginas.ts` (o build falha se divergirem).
 - **A home cita "Araruama, RJ" já no primeiro parágrafo**, junto de "online": é a página de destino do anúncio de busca, e a
   relevância da página pesa na qualidade do anúncio.
-- **A única requisição a terceiro é a tag do Google Ads (`AW-18573150048`), e só na home.** Decisão do CEO em 15/11/2026: sem
-  banner de consentimento, a tag dispara sempre. Mora em [src/lib/tag-google.ts](src/lib/tag-google.ts); o `seo.ts` a injeta no
-  `<head>` **apenas da rota `/`** (nunca no `index.html`, nunca nas páginas "Para os pais" nem em `/privacidade/`). Proteções do parecer
-  do Jurídico, que **não se afrouxam**: `ad_user_data` e `ad_personalization` negados, `allow_ad_personalization_signals:false`,
-  sem remarketing nem listas; o único evento é a conversão "Clique no WhatsApp", disparada no `onClick` do `BotaoWhatsApp` (antes de
-  abrir o `wa.me`), sem valor e sem dado nenhum (`registrarCliqueWhatsApp` não faz nada onde não há tag). O `ad_storage` está `granted`
-  (o Google pode gravar cookie de medição). Fontes continuam do próprio domínio, sem formulário. O rodapé diz que o site usa a medição
-  de anúncios do Google e leva a [/privacidade/](src/pages/Privacidade.tsx), que **precisa continuar verdadeira**: mudou o que se mede, mude o texto e `PRIVACIDADE.atualizadaEm` em `paginas.ts`. (O GitHub Pages registra o IP de quem acessa.)
+- **A única requisição a terceiro é o Google (`gtag.js`).** Decisão do CEO em 15/11 (Ads) e 17/11/2026 (GA4): sem banner de consentimento, as tags disparam sempre.
+  Mora em [src/lib/tag-google.ts](src/lib/tag-google.ts); o `seo.ts` injeta no `<head>` de cada rota (nunca no `index.html`):
+  **home** = `gtag.js` carregado uma vez pelo id do Ads (`AW-18573150048`) + `config` do Ads e do GA4 (`G-VH28PF2KG4`, fluxo "Site Ludiane");
+  **demais rotas** (`/para-os-pais/*`, `/privacidade/`) = `gtag.js` pelo id do GA4 + `config` do GA4; **`404.html` não leva nada** (conferido por grep no `dist/`).
+  O GA4 vai com `allow_google_signals:false`, `allow_ad_personalization_signals:false`, `anonymize_ip:true`; `ad_user_data` e `ad_personalization` negados;
+  sem remarketing, listas nem User-ID (parecer do Jurídico, **não se afrouxa**). `analytics_storage` granted em todas; `ad_storage` granted só na home.
+  Eventos: o `BotaoWhatsApp` dispara `clique_whatsapp` no GA4 (`send_to` o `G-`, parâmetro `origem` = o código `?o=`, ou `direto`; **nada pessoal, nunca tema**)
+  em todas as rotas, e a conversão do Ads "Clique no WhatsApp" só na home (`registrarCliqueWhatsApp(origem)`), sem valor. Rodapé e
+  [/privacidade/](src/pages/Privacidade.tsx) dizem isso e **precisam continuar verdadeiros**: mudou o que se mede, mude o texto e `PRIVACIDADE.atualizadaEm` (e `HOME.atualizadaEm` se o rodapé mudou) em `paginas.ts`. (O GitHub Pages registra o IP de quem acessa.)
 - **Rotas além de home e "Para os pais":** `/privacidade/` (registro `PRIVACIDADE` em `paginas.ts`, rota em `App.tsx`, entrada em `rotasIndexaveis()` e, portanto, no sitemap). Código de WhatsApp `P0`.
 - **O dourado do cartão é `ouro` (#B99A62) e só decora.** Sobre o creme ele dá 2,3:1 e reprova;
   texto dourado usa `ouro-tinta`. Sobre o carvão (`bg-tinta`) o `ouro` passa (4,65:1).

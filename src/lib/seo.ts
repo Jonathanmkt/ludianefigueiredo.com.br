@@ -208,8 +208,8 @@ export const cabecaDaRota = (rota: Rota): string => {
     // `<` escapado: o JSON nunca consegue fechar o <script> por acidente.
     `<script type="application/ld+json">${JSON.stringify(grafo(rota)).replace(/</g, "\\u003c")}</script>`,
   );
-  // A tag de conversão do Google Ads: SÓ na home (ver `lib/tag-google.ts`).
-  if (rota.caminho === "/") linhas.push(tagGoogleHtml());
+  // Google: Ads + GA4 na home, só GA4 nas demais rotas, nada na 404 (ver `lib/tag-google.ts`).
+  if (!rota.naoIndexar) linhas.push(tagGoogleHtml(rota.caminho === "/"));
   return linhas.join("\n    ");
 };
 
