@@ -53,8 +53,13 @@ export const tagGoogleHtml = (home: boolean): string => {
     `s.src='https://www.googletagmanager.com/gtag/js?id=${carga}';document.head.appendChild(s);}` +
     `function ocioso(){if(window.requestIdleCallback)requestIdleCallback(carregar,{timeout:3000});else setTimeout(carregar,2000);}` +
     `if(document.readyState==='complete')ocioso();else addEventListener('load',ocioso);` +
+    // Primeira interação (rolagem, toque, tecla): já começa a baixar o gtag.js, para o clique no WhatsApp não esperar a rede (revisão M2).
+    `['scroll','touchstart','pointerdown','keydown'].forEach(function(t){addEventListener(t,carregar,{once:true,passive:true});});` +
     `document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[data-wa]');if(!a)return;` +
     `var o=new URLSearchParams(location.search).get('o')||'';o=/^[A-Za-z0-9]{1,6}$/.test(o)?o.toUpperCase():'';` +
+    // Clique antes de o React hidratar: o link ainda tem só `(ref. A0)`. Acrescenta a origem da campanha (`A0-G1`) ANTES de o
+    // navegador abrir o link (este ouvinte é da fase de captura), para a anotação da psicóloga não dizer que não veio do anúncio (revisão M1).
+    `var h=a.getAttribute('href')||'';if(o&&/\\(ref\\.%20[A-Z0-9]+\\)/.test(h)){a.setAttribute('href',h.replace(/(\\(ref\\.%20[A-Z0-9]+)\\)/,'$1-'+o+')'));}` +
     `gtag('event','clique_whatsapp',{send_to:'${GA4_ID}',origem:o||'direto',posicao:a.getAttribute('data-posicao')||'nao_informada'});` +
     (home ? `gtag('event','conversion',{send_to:'${GOOGLE_ADS_CONVERSAO}'});` : ``) +
     `carregar();},true);})();`;

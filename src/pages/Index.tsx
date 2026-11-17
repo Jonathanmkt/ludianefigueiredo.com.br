@@ -32,8 +32,8 @@ const Index = () => {
       <section id="inicio" className="overflow-hidden border-b border-fio">
         <div className="container grid lg:grid-cols-[1.05fr_.95fr] lg:gap-8">
           {/* ⚠️ A primeira dobra NÃO usa `Revela`: H1, lead e botão nascem visíveis no HTML (sem opacity:0 antes do JS).
-              No celular o texto vem ANTES da foto, e a foto é mais baixa — o botão de WhatsApp cabe na primeira tela.
-              (17/11/2026: o CEO testou um retrato redondo pequeno acima do título e preferiu manter a foto abaixo do texto.) */}
+              No celular a FOTO vem primeiro (decisão do CEO, 17/11/2026), então o título e o botão de WhatsApp ficam abaixo da primeira tela
+              (375×667: título ≈ 573 px, botão ≈ 921 px). Ele testou o retrato redondo e a foto menor e preferiu a foto original. */}
           <div className="self-center pb-6 pt-8 lg:py-24">
             <span className="estrela mb-4 lg:mb-6" aria-hidden="true" />
             <h1 className="max-w-[24ch] text-balance text-[clamp(2.05rem,4vw,3.1rem)] font-light leading-[1.14]">
@@ -58,9 +58,10 @@ const Index = () => {
             </ul>
           </div>
 
-          {/* Celular: a foto (a mesma, sem alteração) vem PRIMEIRO no hero, logo abaixo do cabeçalho — decisão do CEO em 17/11/2026,
-              ciente de que isso empurra o título e o botão de WhatsApp para baixo da primeira tela (ver medição no AGENTS/registro). */}
-          <div className="relative order-first min-h-[300px] sm:min-h-[460px] lg:order-none lg:min-h-[580px]">
+          {/* Celular: a foto vem PRIMEIRO no hero, logo abaixo do cabeçalho, no TAMANHO ORIGINAL (440 px) — decisão do CEO em 17/11/2026
+              ("não quero foto menor, isso custa no visual"), ciente de que isso empurra o título e o botão de WhatsApp para baixo da
+              primeira tela. Não reduzir sem nova decisão dele. */}
+          <div className="relative order-first min-h-[440px] sm:min-h-[560px] lg:order-none lg:min-h-[580px]">
             <div className="brilho-foto" aria-hidden="true" />
             <img
               src="/ludiane-hero.webp"

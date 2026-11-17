@@ -209,7 +209,8 @@ export const cabecaDaRota = (rota: Rota): string => {
     `<script type="application/ld+json">${JSON.stringify(grafo(rota)).replace(/</g, "\\u003c")}</script>`,
   );
   // Só na home: a foto do topo (candidata a LCP no computador, onde ela está na primeira tela) e a fonte manuscrita do H1.
-  // No celular a foto fica abaixo do texto, por isso o preload da imagem só vale a partir de 1024 px.
+  // No celular a foto está no topo (decisão do CEO), mas o preload fica só a partir de 1024 px de propósito: lá a imagem grande
+  // é escolha de visual, e o preload competiria com o H1 e o CSS; o ganho de LCP vem de o H1 nascer visível.
   if (rota.caminho === "/") {
     linhas.push(
       `<link rel="preload" as="image" href="/ludiane-hero.webp" type="image/webp" media="(min-width: 1024px)" fetchpriority="high" />`,
