@@ -48,7 +48,7 @@ export type Pagina = {
 export const HOME = {
   ref: "A0",
   /** ⚠️ Mexeu no texto ou no desenho da home? Atualize esta data: ela é o `lastmod` do sitemap. */
-  atualizadaEm: "2026-11-16",
+  atualizadaEm: "2026-11-17",
 } as const;
 
 /** A página-lista e a faixa da home. Só existem com ao menos um texto publicado. */

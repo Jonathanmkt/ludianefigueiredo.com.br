@@ -81,7 +81,7 @@ const Privacidade = () => (
 
         <aside aria-label="Conversar" className="mt-16 bg-tinta px-7 py-9 text-center text-papel">
           <p className="mx-auto mb-6 max-w-[38ch] font-titulo text-[1.5rem] leading-snug">Ficou com alguma dúvida?</p>
-          <BotaoWhatsApp referencia={PRIVACIDADE.ref} claro>Falar pelo WhatsApp</BotaoWhatsApp>
+          <BotaoWhatsApp referencia={PRIVACIDADE.ref} posicao="pagina_texto" claro>Falar pelo WhatsApp</BotaoWhatsApp>
         </aside>
       </div>
     </main>

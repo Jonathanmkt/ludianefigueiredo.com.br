@@ -31,12 +31,12 @@ const Cabecalho = ({ interna = false }: { interna?: boolean }) => {
 
   return (
     <header className="sticky top-0 z-40 border-b border-fio bg-superficie/95 backdrop-blur">
-      <div className="container flex items-center justify-between gap-6 py-4">
-        <a href={interna ? "/" : "#inicio"} className="flex flex-col leading-tight" onClick={fechar} aria-label={`${PROFISSIONAL.nome}, ${PROFISSIONAL.profissao} — início`}>
+      <div className="container flex items-center justify-between gap-6 py-2.5">
+        <a href={interna ? "/" : "#inicio"} className="flex min-h-11 flex-col justify-center leading-tight" onClick={fechar} aria-label={`${PROFISSIONAL.nome}, ${PROFISSIONAL.profissao} — início`}>
           <span className="font-titulo text-[1.1rem] uppercase tracking-[0.2em] text-tinta sm:text-[1.22rem]">
             {PROFISSIONAL.nome}
           </span>
-          <span className="mt-0.5 text-[0.6rem] uppercase tracking-[0.22em] text-suave">
+          <span className="mt-0.5 text-[0.75rem] uppercase tracking-[0.12em] text-suave">
             {PROFISSIONAL.profissao} · {PROFISSIONAL.crp}
           </span>
         </a>
@@ -46,7 +46,7 @@ const Cabecalho = ({ interna = false }: { interna?: boolean }) => {
             <a
               key={item.href}
               href={item.href}
-              className="text-[0.72rem] uppercase tracking-[0.16em] text-tinta-2 transition-colors hover:text-ouro-tinta"
+              className="inline-flex min-h-11 items-center text-[0.72rem] uppercase tracking-[0.16em] text-tinta-2 transition-colors hover:text-ouro-tinta"
             >
               {item.rotulo}
             </a>

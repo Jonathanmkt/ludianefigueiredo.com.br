@@ -10,12 +10,12 @@ const Rodape = () => {
         {leituras.length > 0 && (
           <nav aria-label={LISTA.rotulo}>
             <p className="mb-2">
-              <a className="font-semibold text-papel/90 underline decoration-papel/30 underline-offset-4 hover:text-ouro" href={LISTA.caminho}>{LISTA.rotulo}</a>
+              <a className="inline-block py-3 font-semibold text-papel/90 underline decoration-papel/30 underline-offset-4 hover:text-ouro" href={LISTA.caminho}>{LISTA.rotulo}</a>
             </p>
-            <ul className="flex flex-col gap-1.5 sm:flex-row sm:flex-wrap sm:gap-x-6">
+            <ul className="flex flex-col sm:flex-row sm:flex-wrap sm:gap-x-6">
               {leituras.map((p) => (
                 <li key={p.slug}>
-                  <a className="underline decoration-papel/30 underline-offset-4 hover:text-ouro" href={caminhoDe(p)}>
+                  <a className="inline-block py-3 underline decoration-papel/30 underline-offset-4 hover:text-ouro" href={caminhoDe(p)}>
                     {p.h1}
                   </a>
                 </li>
@@ -29,7 +29,7 @@ const Rodape = () => {
           </span>
           <span>
             Este site usa o Google Analytics para medir visitas, sem identificar pessoas; na página inicial, o Google Ads também mede conversões.{" "}
-            <a className="underline decoration-papel/30 underline-offset-4 hover:text-ouro" href="/privacidade/">Privacidade</a>
+            <a className="inline-block py-3 underline decoration-papel/30 underline-offset-4 hover:text-ouro" href="/privacidade/">Privacidade</a>
           </span>
         </div>
       </div>

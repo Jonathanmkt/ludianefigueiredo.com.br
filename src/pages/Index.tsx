@@ -31,35 +31,36 @@ const Index = () => {
       {/* ============ INÍCIO ============ */}
       <section id="inicio" className="overflow-hidden border-b border-fio">
         <div className="container grid lg:grid-cols-[1.05fr_.95fr] lg:gap-8">
-          <div className="order-2 self-center py-10 lg:order-1 lg:py-24">
-            <Revela>
-              <span className="estrela mb-6" aria-hidden="true" />
-              <h1 className="max-w-[24ch] text-balance text-[clamp(2.05rem,4vw,3.1rem)] font-light leading-[1.14]">
-                Psicóloga em Araruama para <span className="font-manuscrita text-[1.18em] font-normal text-ouro-tinta">adolescentes</span> e pré-adolescentes
-              </h1>
-              <p className="mt-4 font-titulo text-[clamp(1.2rem,2vw,1.5rem)] italic leading-snug text-tinta-2">
-                Escuta e cuidado para adolescentes e pré-adolescentes.
-              </p>
-            </Revela>
-            <Revela atraso={0.08}>
-              <p className="lead mt-5 max-w-[48ch]">
-                Atendimento psicológico presencial no Centro de Araruama e online, em um espaço seguro e sem
-                julgamentos, com respeito ao ritmo de cada jovem e ao papel da família.
-              </p>
-              <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
-                <BotaoWhatsApp referencia={HOME.ref}>Conversar pelo WhatsApp</BotaoWhatsApp>
-                <a href="#acompanhamento" className="text-[0.74rem] uppercase tracking-[0.16em] text-tinta-2 underline decoration-ouro decoration-1 underline-offset-8 hover:text-ouro-tinta">
-                  Como funciona
-                </a>
-              </div>
-              <ul className="mt-10 flex flex-wrap gap-x-7 gap-y-2 border-t border-fio pt-6 text-[0.68rem] uppercase tracking-[0.16em] text-suave">
-                <li className="inline-flex items-center gap-2"><Wind className="h-3.5 w-3.5 text-ouro-tinta" aria-hidden="true" /> Presencial e online</li>
-                <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-ouro-tinta" aria-hidden="true" /> Centro · {CONTATO.localidade}</li>
-              </ul>
-            </Revela>
+          {/* ⚠️ A primeira dobra NÃO usa `Revela`: H1, lead e botão nascem visíveis no HTML (sem opacity:0 antes do JS).
+              No celular o texto vem ANTES da foto, e a foto é mais baixa — o botão de WhatsApp cabe na primeira tela.
+              (17/11/2026: o CEO testou um retrato redondo pequeno acima do título e preferiu manter a foto abaixo do texto.) */}
+          <div className="self-center pb-6 pt-8 lg:py-24">
+            <span className="estrela mb-4 lg:mb-6" aria-hidden="true" />
+            <h1 className="max-w-[24ch] text-balance text-[clamp(2.05rem,4vw,3.1rem)] font-light leading-[1.14]">
+              Psicóloga em Araruama · terapia para <span className="font-manuscrita text-[1.18em] font-normal text-ouro-tinta">adolescentes</span> e pré-adolescentes
+            </h1>
+            <p className="mt-4 font-titulo text-[clamp(1.2rem,2vw,1.5rem)] italic leading-snug text-tinta-2">
+              Escuta e cuidado para adolescentes e pré-adolescentes.
+            </p>
+            <p className="lead mt-5 max-w-[48ch]">
+              Atendimento psicológico presencial no Centro de Araruama e online, em um espaço seguro e sem
+              julgamentos, com respeito ao ritmo de cada jovem e ao papel da família.
+            </p>
+            <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 lg:mt-9 lg:gap-y-4">
+              <BotaoWhatsApp referencia={HOME.ref} posicao="topo">Conversar pelo WhatsApp</BotaoWhatsApp>
+              <a href="#acompanhamento" className="inline-flex min-h-11 items-center text-[0.74rem] uppercase tracking-[0.16em] text-tinta-2 underline decoration-ouro decoration-1 underline-offset-8 hover:text-ouro-tinta">
+                Como funciona
+              </a>
+            </div>
+            <ul className="mt-6 flex flex-wrap gap-x-7 gap-y-2 border-t border-fio pt-5 text-[0.68rem] uppercase tracking-[0.16em] text-suave lg:mt-10 lg:pt-6">
+              <li className="inline-flex items-center gap-2"><Wind className="h-3.5 w-3.5 text-ouro-tinta" aria-hidden="true" /> Presencial e online</li>
+              <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-ouro-tinta" aria-hidden="true" /> Centro · {CONTATO.localidade}</li>
+            </ul>
           </div>
 
-          <Revela gesto="imagem" className="relative order-1 min-h-[440px] sm:min-h-[560px] lg:order-2 lg:min-h-[580px]">
+          {/* Celular: a foto (a mesma, sem alteração) vem PRIMEIRO no hero, logo abaixo do cabeçalho — decisão do CEO em 17/11/2026,
+              ciente de que isso empurra o título e o botão de WhatsApp para baixo da primeira tela (ver medição no AGENTS/registro). */}
+          <div className="relative order-first min-h-[300px] sm:min-h-[460px] lg:order-none lg:min-h-[580px]">
             <div className="brilho-foto" aria-hidden="true" />
             <img
               src="/ludiane-hero.webp"
@@ -70,7 +71,7 @@ const Index = () => {
               {...{ fetchpriority: "high" }} // React 18 só repassa o atributo em minúsculas (`fetchPriority` é descartado)
               decoding="async"
             />
-          </Revela>
+          </div>
         </div>
       </section>
 
@@ -164,9 +165,9 @@ const Index = () => {
             </Revela>
             <ul className="grid gap-px overflow-hidden rounded-sm border border-fio bg-fio md:grid-cols-2">
               {leituras.slice(0, 6).map((p) => (
-                <li key={p.slug} className="bg-superficie p-7">
+                <li key={p.slug} className="relative bg-superficie p-7">
                   <h3 className="text-[1.3rem] leading-snug">
-                    <a className="hover:text-ouro-tinta" href={caminhoDe(p)}>{p.h1}</a>
+                    <a className="after:absolute after:inset-0 hover:text-ouro-tinta" href={caminhoDe(p)}>{p.h1}</a>
                   </h3>
                 </li>
               ))}
@@ -174,7 +175,7 @@ const Index = () => {
             <p className="mt-8">
               <a
                 href={LISTA.caminho}
-                className="text-[0.74rem] uppercase tracking-[0.16em] text-tinta-2 underline decoration-ouro decoration-1 underline-offset-8 hover:text-ouro-tinta"
+                className="inline-flex min-h-11 items-center text-[0.74rem] uppercase tracking-[0.16em] text-tinta-2 underline decoration-ouro decoration-1 underline-offset-8 hover:text-ouro-tinta"
               >
                 Ver todos os textos
               </a>
@@ -221,7 +222,7 @@ const Index = () => {
               Envie uma mensagem. Respondo para combinarmos a primeira conversa.
             </p>
             <div className="mt-9 flex justify-center">
-              <BotaoWhatsApp referencia={HOME.ref} claro>Falar pelo WhatsApp</BotaoWhatsApp>
+              <BotaoWhatsApp referencia={HOME.ref} posicao="rodape" claro>Falar pelo WhatsApp</BotaoWhatsApp>
             </div>
             <ul className="mt-12 flex flex-col items-center justify-center gap-x-10 gap-y-3 text-[0.95rem] text-papel/85 sm:flex-row sm:flex-wrap">
               <li>

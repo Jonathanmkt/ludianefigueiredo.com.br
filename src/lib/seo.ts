@@ -208,6 +208,14 @@ export const cabecaDaRota = (rota: Rota): string => {
     // `<` escapado: o JSON nunca consegue fechar o <script> por acidente.
     `<script type="application/ld+json">${JSON.stringify(grafo(rota)).replace(/</g, "\\u003c")}</script>`,
   );
+  // Só na home: a foto do topo (candidata a LCP no computador, onde ela está na primeira tela) e a fonte manuscrita do H1.
+  // No celular a foto fica abaixo do texto, por isso o preload da imagem só vale a partir de 1024 px.
+  if (rota.caminho === "/") {
+    linhas.push(
+      `<link rel="preload" as="image" href="/ludiane-hero.webp" type="image/webp" media="(min-width: 1024px)" fetchpriority="high" />`,
+      `<link rel="preload" href="/fontes/parisienne.woff2" as="font" type="font/woff2" crossorigin />`,
+    );
+  }
   // Google: Ads + GA4 na home, só GA4 nas demais rotas, nada na 404 (ver `lib/tag-google.ts`).
   if (!rota.naoIndexar) linhas.push(tagGoogleHtml(rota.caminho === "/"));
   return linhas.join("\n    ");

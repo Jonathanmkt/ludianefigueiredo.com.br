@@ -3,12 +3,13 @@ import type { ReactNode } from "react";
 import { IconeWhatsApp } from "@/components/Icones";
 import { Button } from "@/components/ui/button";
 import { whatsappLink } from "@/data/conteudo";
-import { registrarCliqueWhatsApp } from "@/lib/tag-google";
+import type { PosicaoWhatsApp } from "@/lib/tag-google";
 
 /**
  * A origem de campanha que vem no endereço (`?o=G1`): só letras e números, até 6.
- * É lida no navegador e vai para a mensagem pronta do WhatsApp e, como parâmetro `origem`, para o evento GA4 `clique_whatsapp`.
- * Nada pessoal. O clique também dispara a conversão do Google Ads, só na home.
+ * É lida no navegador e vai para a mensagem pronta do WhatsApp. O evento GA4 `clique_whatsapp` (com `origem` e `posicao`)
+ * e a conversão do Google Ads (só na home) NÃO saem daqui: o ouvinte de clique mora no script do <head> (`tag-google.ts`),
+ * que reconhece o link por `data-wa` e lê `data-posicao`. Assim o clique conta mesmo antes de o React hidratar. Nada pessoal.
  */
 const origemDaUrl = (): string => {
   const o = new URLSearchParams(window.location.search).get("o") ?? "";
@@ -23,10 +24,13 @@ const origemDaUrl = (): string => {
 const BotaoWhatsApp = ({
   children,
   referencia,
+  posicao,
   claro = false,
 }: {
   children: ReactNode;
   referencia: string;
+  /** Onde o botão está na página: vai no evento `clique_whatsapp` do GA4 (parâmetro `posicao`). */
+  posicao: PosicaoWhatsApp;
   claro?: boolean;
 }) => {
   // Começa vazio para o HTML pré-renderizado e a hidratação serem idênticos.
@@ -42,7 +46,8 @@ const BotaoWhatsApp = ({
           : "h-12 rounded-full bg-tinta px-7 font-corpo text-[0.9rem] text-papel shadow-[0_26px_50px_-30px_rgba(60,50,30,.7)] hover:bg-tinta-2"
       }
     >
-      <a href={whatsappLink(origem ? `${referencia}-${origem}` : referencia)} onClick={() => registrarCliqueWhatsApp(origem)} target="_blank" rel="noopener noreferrer">
+      <a href={whatsappLink(origem ? `${referencia}-${origem}` : referencia)} data-wa=""
+        data-posicao={posicao} target="_blank" rel="noopener noreferrer">
         <IconeWhatsApp className="!size-5" />
         {children}
       </a>

@@ -61,7 +61,7 @@ const ListaParaOsPais = () => {
 
           <aside aria-label="Conversar" className="mt-16 bg-tinta px-7 py-9 text-center text-papel">
             <p className="mx-auto mb-6 max-w-[38ch] font-titulo text-[1.5rem] leading-snug">Vamos conversar?</p>
-            <BotaoWhatsApp referencia={LISTA.ref} claro>Falar pelo WhatsApp</BotaoWhatsApp>
+            <BotaoWhatsApp referencia={LISTA.ref} posicao="pagina_texto" claro>Falar pelo WhatsApp</BotaoWhatsApp>
           </aside>
         </div>
       </main>
