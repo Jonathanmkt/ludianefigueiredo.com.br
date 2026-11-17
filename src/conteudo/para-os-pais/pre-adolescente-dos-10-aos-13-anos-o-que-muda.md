@@ -1,5 +1,5 @@
 ---
-titulo: "Pré-adolescente, dos 10 aos 13 anos: o que muda e quando buscar ajuda"
+titulo: "Pré-adolescência: o que muda"
 descricao: "O que muda na pré-adolescência, dos 10 aos 13 anos, o que é esperado e quando buscar ajuda de um psicólogo. Um guia calmo para pais."
 h1: "Pré-adolescente, dos 10 aos 13 anos: o que muda e quando buscar ajuda"
 ref: A10

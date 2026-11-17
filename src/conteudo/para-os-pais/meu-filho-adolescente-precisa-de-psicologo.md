@@ -1,5 +1,5 @@
 ---
-titulo: "Meu filho adolescente precisa de psicólogo? Sinais e quando buscar ajuda"
+titulo: "Meu filho precisa de psicólogo?"
 descricao: "Como saber se seu filho adolescente precisa de um psicólogo: o que é da idade, o que merece atenção e como começar essa conversa em casa."
 h1: "Meu filho adolescente precisa de psicólogo? Sinais e quando buscar ajuda"
 ref: A1

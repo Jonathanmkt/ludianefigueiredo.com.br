@@ -1,5 +1,5 @@
 ---
-titulo: "Como conversar com o adolescente que não fala"
+titulo: "Como conversar com o adolescente"
 descricao: "Adolescente não conversa com os pais? Veja por que ele se cala, o que ajuda a começar um diálogo e quando a conversa pede apoio profissional."
 h1: "Como conversar com o adolescente que não fala"
 ref: A12

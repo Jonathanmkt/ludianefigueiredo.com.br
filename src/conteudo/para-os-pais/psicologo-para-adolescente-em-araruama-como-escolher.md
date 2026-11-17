@@ -1,5 +1,5 @@
 ---
-titulo: "Psicólogo para adolescente em Araruama: como escolher, inclusive online"
+titulo: "Psicólogo para adolescente em Araruama"
 descricao: "Como escolher um psicólogo para o seu filho adolescente: o que conferir no CRP, o que perguntar e o que muda entre atendimento presencial e online."
 h1: "Psicólogo para adolescente em Araruama: como escolher, inclusive online"
 ref: A4

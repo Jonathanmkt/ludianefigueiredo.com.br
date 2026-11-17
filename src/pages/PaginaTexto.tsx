@@ -9,6 +9,8 @@ import { DadosTextoContext } from "@/lib/dados-texto";
 import type { DadosTexto } from "@/lib/dados-texto";
 
 const LINK = "underline decoration-fio-2 underline-offset-4 hover:text-ouro-tinta";
+/** Link de texto com área de toque de pelo menos 44 px de altura (revisão de 17/11/2026: alvos pequenos nos textos). */
+const LINK_TOQUE = `${LINK} inline-flex min-h-11 items-center`;
 
 /**
  * O gabarito de um texto "Para os pais": trilha · H1 · autoria · sumário · corpo (HTML do Markdown) ·
@@ -52,11 +54,11 @@ const PaginaTexto = ({ pagina }: { pagina: Pagina }) => {
           <nav aria-label="Trilha de navegação" className="mb-8 text-[0.8rem] text-suave">
             <ol className="flex flex-wrap items-center gap-x-2">
               <li>
-                <a className={LINK} href="/">Início</a>
+                <a className={LINK_TOQUE} href="/">Início</a>
               </li>
               <li aria-hidden="true">›</li>
               <li>
-                <a className={LINK} href={LISTA.caminho}>{LISTA.rotulo}</a>
+                <a className={LINK_TOQUE} href={LISTA.caminho}>{LISTA.rotulo}</a>
               </li>
               <li aria-hidden="true">›</li>
               <li aria-current="page">{pagina.h1}</li>
@@ -78,7 +80,7 @@ const PaginaTexto = ({ pagina }: { pagina: Pagina }) => {
                 <ol className="list-decimal space-y-1.5 pl-5 text-[0.95rem] text-tinta-2">
                   {dados.sumario.map((q) => (
                     <li key={q.id}>
-                      <a className={LINK} href={`#${q.id}`}>{q.pergunta}</a>
+                      <a className={LINK_TOQUE} href={`#${q.id}`}>{q.pergunta}</a>
                     </li>
                   ))}
                 </ol>
@@ -93,7 +95,7 @@ const PaginaTexto = ({ pagina }: { pagina: Pagina }) => {
                     {dados.fontes.map((f) => (
                       <li key={f.url}>
                         {f.instituicao}.{" "}
-                        <a className={LINK} href={f.url} target="_blank" rel="noopener noreferrer">{f.titulo}</a>.{f.ano ? ` ${f.ano}.` : ""}
+                        <a className={`${LINK} inline-block py-2`} href={f.url} target="_blank" rel="noopener noreferrer">{f.titulo}</a>.{f.ano ? ` ${f.ano}.` : ""}
                       </li>
                     ))}
                   </ul>
@@ -115,7 +117,7 @@ const PaginaTexto = ({ pagina }: { pagina: Pagina }) => {
               <ul className="space-y-2 text-[0.95rem]">
                 {dados.relacionados.map((r) => (
                   <li key={r.slug}>
-                    <a className={LINK} href={caminhoDe(r)}>{r.h1}</a>
+                    <a className={LINK_TOQUE} href={caminhoDe(r)}>{r.h1}</a>
                   </li>
                 ))}
               </ul>

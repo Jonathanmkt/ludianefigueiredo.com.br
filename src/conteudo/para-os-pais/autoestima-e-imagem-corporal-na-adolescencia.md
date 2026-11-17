@@ -1,5 +1,5 @@
 ---
-titulo: "Autoestima e imagem corporal na adolescência"
+titulo: "Autoestima e corpo na adolescência"
 descricao: "Por que a autoestima e a imagem do corpo pesam tanto na adolescência, o que a pesquisa mostra e como conversar em casa sem reforçar o problema."
 h1: "Autoestima e imagem corporal na adolescência"
 ref: A11

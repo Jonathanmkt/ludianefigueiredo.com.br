@@ -19,8 +19,9 @@ const LOGO = `${SITE}/marca-ludiane.png`;
 const NOME_SERVICO = `${PROFISSIONAL.nome} · ${PROFISSIONAL.profissao}`;
 const CRP_NUMERO = PROFISSIONAL.crp.replace("CRP ", "");
 
-export const HOME_TITULO = `${PROFISSIONAL.nome} · Psicóloga para adolescentes · ${CONTATO.localidade} · ${PROFISSIONAL.crp}`;
-export const HOME_DESCRICAO = `Psicóloga para pré-adolescentes e adolescentes em ${CONTATO.localidade}: atendimento presencial no Centro e online. Contato inicial pelo WhatsApp. ${PROFISSIONAL.crp}.`;
+// Palavras-chave primeiro (o Google corta o título em ~60 caracteres): as buscas do anúncio e do orgânico são 'psicóloga/terapia ... Araruama'.
+export const HOME_TITULO = `Psicóloga e terapia para adolescentes em Araruama · ${PROFISSIONAL.nome}`;
+export const HOME_DESCRICAO = `Psicóloga e terapia para pré-adolescentes e adolescentes em ${CONTATO.localidade}: presencial no Centro e online. Contato inicial pelo WhatsApp. ${PROFISSIONAL.crp}.`;
 
 /** Uma rota a pré-renderizar. `caminho` é o que o navegador pede; o arquivo sai de `arquivo`. */
 export type Rota = {
@@ -45,7 +46,8 @@ export const ROTA_404: Rota = {
   naoIndexar: true,
 };
 
-const SUFIXO = ` · ${PROFISSIONAL.nome} · ${PROFISSIONAL.crp}`;
+// O CRP fica no texto da página (autoria, descrição, dados estruturados), não no título: o sufixo curto deixa o assunto aparecer inteiro.
+const SUFIXO = ` · ${PROFISSIONAL.nome}`;
 const maisRecente = (datas: string[]): string => [...datas].sort().at(-1)!;
 
 /** Todas as rotas indexáveis: a home, a lista "Para os pais" (se houver texto publicado) e os textos publicados. A 404 vai à parte. */

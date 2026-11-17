@@ -1,5 +1,5 @@
 ---
-titulo: "Adolescente isolado no quarto e no celular: normal ou sinal de alerta?"
+titulo: "Adolescente isolado no quarto"
 descricao: "Adolescente isolado no quarto e só no celular? Veja o que é próprio da idade, o que merece atenção e como combinar o uso do celular em casa."
 h1: "Adolescente isolado no quarto e no celular: normal ou sinal de alerta?"
 ref: A9

@@ -1,5 +1,5 @@
 ---
-titulo: "Meu filho não quer fazer terapia: como propor"
+titulo: "Filho não quer terapia: como propor"
 descricao: "O adolescente não quer ir ao psicólogo? Entenda por que ele resiste, o que ajuda e o que atrapalha na hora de propor a terapia, sem forçar."
 h1: "Meu filho não quer fazer terapia: como propor"
 ref: A7

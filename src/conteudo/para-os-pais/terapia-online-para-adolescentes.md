@@ -1,5 +1,5 @@
 ---
-titulo: "Terapia online funciona para adolescentes? Como é na prática"
+titulo: "Terapia online para adolescentes"
 descricao: "Um adolescente pode fazer terapia online? Veja como funciona, o que a regra do Conselho exige, como fica a privacidade e para quem o formato serve."
 h1: "Terapia online funciona para adolescentes? Como é na prática"
 ref: A3

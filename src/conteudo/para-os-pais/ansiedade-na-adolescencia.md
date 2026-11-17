@@ -1,5 +1,5 @@
 ---
-titulo: "Ansiedade na adolescência: sinais e quando procurar ajuda"
+titulo: "Ansiedade na adolescência: sinais"
 descricao: "Ansiedade em adolescentes: o que é esperado, que sinais merecem atenção, como ajudar seu filho em casa e quando procurar um psicólogo."
 h1: "Ansiedade na adolescência: sinais e quando procurar ajuda"
 ref: A2

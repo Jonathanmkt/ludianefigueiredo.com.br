@@ -1,5 +1,5 @@
 ---
-titulo: "O que os pais podem saber sobre a terapia do adolescente? Sigilo e participação"
+titulo: "Sigilo na terapia do adolescente"
 descricao: "Os pais podem saber o que o filho fala na terapia? Entenda o sigilo do adolescente, a autorização dos responsáveis e como a família participa."
 h1: "O que os pais podem saber sobre a terapia do adolescente? Sigilo e participação"
 ref: A8

@@ -1,5 +1,5 @@
 ---
-titulo: "Tristeza, irritação e desânimo na adolescência: o que é esperado e o que merece atenção"
+titulo: "Tristeza e irritação na adolescência"
 descricao: "O que deixa um adolescente triste, irritado ou desanimado, o que é da idade e quando a tristeza que dura merece a atenção de um profissional."
 h1: "Tristeza, irritação e desânimo na adolescência: o que é esperado e o que merece atenção"
 ref: A5

@@ -1,5 +1,5 @@
 ---
-titulo: "Escola, provas e Enem: quando a pressão vira sofrimento"
+titulo: "Pressão da escola e do Enem"
 descricao: "Ansiedade com o Enem e com as provas é comum na adolescência. Veja quando passa do esperado, como falar com a escola e o que fazer em casa."
 h1: "Escola, provas e Enem: quando a pressão vira sofrimento"
 ref: A6
